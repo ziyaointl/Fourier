@@ -17,6 +17,8 @@
 		98D5A9FF205A73B6003BDA7F /* 440and173.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 98D5A9FE205A73B6003BDA7F /* 440and173.m4a */; };
 		98D5AA01205AA30A003BDA7F /* MDK - Fingerbang.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 98D5AA00205AA30A003BDA7F /* MDK - Fingerbang.mp3 */; };
 		98D5AA03205ABD74003BDA7F /* Mirror.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 98D5AA02205ABD74003BDA7F /* Mirror.mp3 */; };
+		98D5AA05205B53C3003BDA7F /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D5AA04205B53C3003BDA7F /* AudioManager.swift */; };
+		98D5AA07205B5583003BDA7F /* AudioManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D5AA06205B5583003BDA7F /* AudioManagerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		98D5A9FE205A73B6003BDA7F /* 440and173.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 440and173.m4a; sourceTree = "<group>"; };
 		98D5AA00205AA30A003BDA7F /* MDK - Fingerbang.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "MDK - Fingerbang.mp3"; sourceTree = "<group>"; };
 		98D5AA02205ABD74003BDA7F /* Mirror.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Mirror.mp3; sourceTree = "<group>"; };
+		98D5AA04205B53C3003BDA7F /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		98D5AA06205B5583003BDA7F /* AudioManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManagerDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 			children = (
 				98B6DA14205A53E4009B54E7 /* AppDelegate.swift */,
 				98B6DA16205A53E5009B54E7 /* ViewController.swift */,
+				98D5AA04205B53C3003BDA7F /* AudioManager.swift */,
+				98D5AA06205B5583003BDA7F /* AudioManagerDelegate.swift */,
 				98B6DA18205A53E5009B54E7 /* Main.storyboard */,
 				98B6DA2C205A63F2009B54E7 /* SpectrumView.swift */,
 				98D5AA02205ABD74003BDA7F /* Mirror.mp3 */,
@@ -157,6 +163,8 @@
 			files = (
 				98B6DA17205A53E5009B54E7 /* ViewController.swift in Sources */,
 				98B6DA2D205A63F2009B54E7 /* SpectrumView.swift in Sources */,
+				98D5AA07205B5583003BDA7F /* AudioManagerDelegate.swift in Sources */,
+				98D5AA05205B53C3003BDA7F /* AudioManager.swift in Sources */,
 				98B6DA15205A53E4009B54E7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
