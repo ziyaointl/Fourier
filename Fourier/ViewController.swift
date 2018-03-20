@@ -85,6 +85,13 @@ class ViewController: UIViewController, AudioManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         audioManager.delegate = self
+        scene = SCNScene()
+        setup(scene: scene)
+        sceneView = SCNView()
+        setup(subView: sceneView)
+        sceneView.scene = scene
+        sceneView.allowsCameraControl = true
+        sceneView.showsStatistics = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
