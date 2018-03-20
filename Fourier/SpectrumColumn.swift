@@ -9,7 +9,7 @@
 import Foundation
 
 struct SpectrumColumn {
-    private let initialHeight = Float(0.5)
+    private let initialHeight = Float(0)
     private var heightDelta: Float
     var height: Float {
         get {

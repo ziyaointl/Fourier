@@ -11,7 +11,7 @@ import SceneKit
 
 class SpectrumGraph3D: SpectrumGraph {
     var rootNode = SCNNode()
-    private var columns3D = [SCNBox]()
+    private var columns3D = [SCNShape]()
     private var columnNodes = [SCNNode]()
     private var materials = Materials()
     
@@ -33,25 +33,25 @@ class SpectrumGraph3D: SpectrumGraph {
         SCNTransaction.animationDuration = 0.1
         SCNTransaction.begin()
         for index in columns.indices {
-            columns3D[index].height = CGFloat(columns[index].height)
-            columnNodes[index].pivot = SCNMatrix4MakeTranslation(0, Float(-columns[index].height / 2), 0)
+            if let currColumn = columnNodes[index].geometry as? SCNShape {
+                currColumn.extrusionDepth = CGFloat(columns[index].height)
+            }
         }
         SCNTransaction.commit()
     }
     
     private func createColumnNode(width: CGFloat, height: CGFloat) -> SCNNode {
         // Initialize
-        let box = SCNBox(width: width, height: height, length: width, chamferRadius: 0.05)
+        let path = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: width, height: width), cornerRadius: 0.1)
+        let shape = SCNShape(path: path, extrusionDepth: width)
         let boxNode = SCNNode()
-        columns3D.append(box)
+        shape.chamferMode = .both
+        columns3D.append(shape)
+        boxNode.geometry = shape
         columnNodes.append(boxNode)
-        boxNode.geometry = box
         
         // Apply material
-        box.firstMaterial = materials.physicallyBasedWhiteMaterial
-        
-        // Move pivot to the bottom of the column
-        boxNode.pivot = SCNMatrix4MakeTranslation(0, Float(-(box.height/2)), 0)
+        shape.firstMaterial = materials.physicallyBasedWhiteMaterial
 
         return boxNode
     }

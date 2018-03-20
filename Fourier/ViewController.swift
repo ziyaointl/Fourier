@@ -60,7 +60,7 @@ class ViewController: UIViewController, AudioManagerDelegate {
         floor.reflectivity = 0
         
         // Set up spectrum
-        spectrumGraph3D = SpectrumGraph3D(numberOfColumns: 10, widthPerColumn: 1, columnOffset: 0.2)
+        spectrumGraph3D = SpectrumGraph3D(numberOfColumns: 15, widthPerColumn: 1, columnOffset: 0.2)
         scene.rootNode.addChildNode(spectrumGraph3D.rootNode)
         
         // Set up light
@@ -68,10 +68,11 @@ class ViewController: UIViewController, AudioManagerDelegate {
         light.castsShadow = true
         light.type = .spot
         light.intensity = 300
+        light.spotOuterAngle = 90.0
         let lightNode = SCNNode()
         lightNode.light = light
-        lightNode.position = SCNVector3(-10, 10, 10)
-        lightNode.eulerAngles = SCNVector3(-0.671183, -0.40739, 0.30485)
+        lightNode.position = SCNVector3(13, 10, -10)
+        lightNode.eulerAngles = SCNVector3(-2.096, -0.40739, -0.6852)
         lightNode.geometry = SCNBox(width: 0.1, height: 1, length: 0.1, chamferRadius: 0.0)
         scene.rootNode.addChildNode(lightNode)
         
@@ -96,7 +97,7 @@ class ViewController: UIViewController, AudioManagerDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if let url = Bundle.main.url(forResource: "MDK - Fingerbang", withExtension: "mp3") {
+        if let url = Bundle.main.url(forResource: "Mirror", withExtension: "mp3") {
             audioManager.play(fileWithURL: url)
         }
     }

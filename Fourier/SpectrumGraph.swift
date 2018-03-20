@@ -43,10 +43,7 @@ class SpectrumGraph {
                 currBinSize += 1
             }
             bins[i - 1] /= Double(currBinSize)
-            bins[i - 1] = log2(bins[i - 1] + 2) * 0.8
-            if bins[i - 1] > 10 {
-                bins[i - 1] = 10
-            }
+            bins[i - 1] = log2(bins[i - 1] + 2) * 1.6 - 1.4
             currBinSize = 0
             heightIndex = Int(maxHeightIndex)
         }
