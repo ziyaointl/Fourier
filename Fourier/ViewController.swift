@@ -8,12 +8,28 @@
 
 import UIKit
 import AVFoundation
-import Accelerate
+import SceneKit
 
 class ViewController: UIViewController, AudioManagerDelegate {
     private var audioManager = AudioManager()
-
-    @IBOutlet private weak var spectrumView: SpectrumView!
+    private var spectrumView: SpectrumView?
+    private var sceneView: SCNView!
+    private var scene: SCNScene!
+    private var materials = Materials()
+    private var spectrumGraph3D: SpectrumGraph3D!
+    
+    func setup(subView: UIView) {
+        subView.translatesAutoresizingMaskIntoConstraints = false
+        subView.backgroundColor = .gray
+        view.addSubview(subView)
+        
+        NSLayoutConstraint.activate([
+            subView.topAnchor.constraint(equalTo: view.topAnchor),
+            subView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            subView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            subView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            ])
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
