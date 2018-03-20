@@ -31,6 +31,57 @@ class ViewController: UIViewController, AudioManagerDelegate {
             ])
     }
     
+    func setup(scene: SCNScene) {
+        // Set up enviornment lighting
+        let lightMap = #imageLiteral(resourceName: "studio021")
+        scene.lightingEnvironment.contents = lightMap
+        scene.lightingEnvironment.intensity = 2.0
+        scene.background.contents = #colorLiteral(red: 0.9027006662, green: 0.9027006662, blue: 0.9027006662, alpha: 1)
+        
+        // Set up camera
+        let cameraNode = SCNNode()
+        cameraNode.camera = SCNCamera()
+        cameraNode.camera?.wantsHDR = true
+        cameraNode.camera?.exposureOffset = 2
+        cameraNode.camera?.wantsExposureAdaptation = false
+        cameraNode.position = SCNVector3(x:0, y:1, z:10)
+        cameraNode.camera?.screenSpaceAmbientOcclusionIntensity = 1.0
+        scene.rootNode.addChildNode(cameraNode)
+        
+        // Set originNode
+        let modelOriginNode = SCNNode()
+        scene.rootNode.addChildNode(modelOriginNode)
+        
+        // Set up floor
+        let floor = SCNFloor()
+        let floorNode = SCNNode(geometry: floor)
+        modelOriginNode.addChildNode(floorNode)
+        floorNode.geometry?.firstMaterial = materials.physicallyBasedWhiteMaterial
+        floor.reflectivity = 0
+        
+        // Set up spectrum
+        spectrumGraph3D = SpectrumGraph3D(numberOfColumns: 10, widthPerColumn: 1, columnOffset: 0.2)
+        scene.rootNode.addChildNode(spectrumGraph3D.rootNode)
+        
+        // Set up light
+        let light = SCNLight()
+        light.castsShadow = true
+        light.type = .spot
+        light.intensity = 300
+        let lightNode = SCNNode()
+        lightNode.light = light
+        lightNode.position = SCNVector3(-10, 10, 10)
+        lightNode.eulerAngles = SCNVector3(-0.671183, -0.40739, 0.30485)
+        lightNode.geometry = SCNBox(width: 0.1, height: 1, length: 0.1, chamferRadius: 0.0)
+        scene.rootNode.addChildNode(lightNode)
+        
+        // Add constraints (does not work)
+        // let constraint = SCNLookAtConstraint(target: scene.rootNode)
+        // constraint.isGimbalLockEnabled = true
+        // lightNode.constraints?.append(constraint)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         audioManager.delegate = self
@@ -52,7 +103,6 @@ class ViewController: UIViewController, AudioManagerDelegate {
     }
 
 }
-
 
 //   if let url = Bundle.main.url(forResource: "Mirror", withExtension: "mp3") {
 //   if let url = Bundle.main.url(forResource: "MDK - Fingerbang", withExtension: "mp3") {
