@@ -45,7 +45,7 @@ class ViewController: UIViewController, AudioManagerDelegate {
         cameraNode.camera?.exposureOffset = 2
         cameraNode.camera?.wantsExposureAdaptation = false
         cameraNode.position = SCNVector3(x:0, y:1, z:10)
-        cameraNode.camera?.screenSpaceAmbientOcclusionIntensity = 1.0
+//        cameraNode.camera?.screenSpaceAmbientOcclusionIntensity = 1.0
         scene.rootNode.addChildNode(cameraNode)
         
         // Set originNode
