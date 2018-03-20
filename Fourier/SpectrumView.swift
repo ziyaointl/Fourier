@@ -8,12 +8,23 @@
 
 import UIKit
 
+// How to use SpectrumView
+//
+// In viewDidLoad()
+//        spectrumView = SpectrumView()
+//        setup(subView: spectrumView!)
+// In didFourierTransform()
+//        if spectrumView != nil {
+//            spectrumView!.points = output
+//            DispatchQueue.main.async {
+//                self.spectrumView!.setNeedsDisplay()
+//            }
+//        }
+
 class SpectrumView: UIView {
 
     var points = [Float]()
     
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
     override func draw(_ rect: CGRect) {
         let offset: CGFloat = 30
         UIColor.black.setFill()

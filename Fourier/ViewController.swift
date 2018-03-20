@@ -22,7 +22,7 @@ class ViewController: UIViewController, AudioManagerDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if let url = Bundle.main.url(forResource: "Mirror", withExtension: "mp3") {
+        if let url = Bundle.main.url(forResource: "MDK - Fingerbang", withExtension: "mp3") {
             audioManager.play(fileWithURL: url)
         }
     }
@@ -30,14 +30,10 @@ class ViewController: UIViewController, AudioManagerDelegate {
     // MARK: AudioManager Delegation
     
     func didFourierTransform(_ audioManager: AudioManager, output: Array<Float>) {
-        if spectrumView != nil {
-            spectrumView.points = output
-            DispatchQueue.main.async {
-                self.spectrumView.setNeedsDisplay()
-            }
+        if sceneView != nil {
+            spectrumGraph3D.updateColumnHeights(heightList: output)
         }
     }
-
 
 }
 
