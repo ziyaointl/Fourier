@@ -29,4 +29,30 @@ class SpectrumGraph {
         }
     }
     
+    func updateColumnHeights(heightList: [Float]) {
+        var bins = [Double](repeating: 0.0, count: columns.count)
+        let e = 2.71828
+        let base = pow(e, log(Double(heightList.count))/Double(columns.count))
+        var heightIndex = 0
+        var currBinSize = 0
+        for i in 1...columns.count {
+            let maxHeightIndex = pow(base, Double(i))
+            while heightIndex <= Int(maxHeightIndex) && currBinSize < 10 {
+                bins[i - 1] += Double(heightList[heightIndex])
+                heightIndex += 1
+                currBinSize += 1
+            }
+            bins[i - 1] /= Double(currBinSize)
+            bins[i - 1] = log2(bins[i - 1] + 2) * 0.8
+            if bins[i - 1] > 10 {
+                bins[i - 1] = 10
+            }
+            currBinSize = 0
+            heightIndex = Int(maxHeightIndex)
+        }
+        
+        for i in columns.indices {
+            columns[i].height = Float(bins[i])
+        }
+    }
 }
