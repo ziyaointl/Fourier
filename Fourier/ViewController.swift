@@ -46,7 +46,8 @@ class ViewController: UIViewController, AudioManagerDelegate {
         cameraNode.camera = SCNCamera()
         cameraNode.camera?.wantsHDR = true
         cameraNode.camera?.wantsExposureAdaptation = false
-        cameraNode.position = SCNVector3(x:0, y:1, z:10)
+        cameraNode.position = SCNVector3(x: 0, y: 0, z: 25)
+        cameraOrbitNode.position = SCNVector3(x: 0, y: 0, z: -8)
         scene.rootNode.addChildNode(cameraOrbitNode)
         cameraOrbitNode.addChildNode(cameraNode)
         cameraController = CustomCameraController(for: cameraOrbitNode)
