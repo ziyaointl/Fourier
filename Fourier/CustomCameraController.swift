@@ -13,20 +13,29 @@ class CustomCameraController {
     var previousWidthRatio: Float = 0.0
     var previousHeightRatio: Float = 0.0
     var lookAtNode: SCNNode!
+    let maximumHeightRatio: Float = 0.4
+    let minimumHeightRatio: Float = 0.21
+    var initialHeightRatio: Float {
+        return (maximumHeightRatio + minimumHeightRatio) / 2
+    }
     
     init(for node: SCNNode) {
         lookAtNode = node
+        // Initialize position
+        lookAtNode.eulerAngles.x = -Float.pi * initialHeightRatio
+        previousHeightRatio = initialHeightRatio
     }
     
     @objc func handlePanGesture(sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: sender.view!)
-        let widthRatio = Float(translation.x) / Float(sender.view!.frame.size.width) + previousWidthRatio
         let heightRatio = Float(translation.y) / Float(sender.view!.frame.size.height) + previousHeightRatio
-        lookAtNode.eulerAngles.y = Float(-2 * Double.pi) * widthRatio
-        lookAtNode.eulerAngles.x = Float(-2 * Double.pi) * heightRatio
-        if (sender.state == .ended) {
-            previousWidthRatio = widthRatio
-            previousHeightRatio = heightRatio
+        if heightRatio < maximumHeightRatio && heightRatio > minimumHeightRatio {
+            lookAtNode.eulerAngles.x = -Float.pi * heightRatio
+            if (sender.state == .ended) {
+                previousHeightRatio = heightRatio
+            }
+        } else if (sender.state == .ended) {
+            previousHeightRatio = lookAtNode.eulerAngles.x / (-Float.pi)
         }
     }
 }
