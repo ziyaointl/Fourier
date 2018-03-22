@@ -33,9 +33,8 @@ class SpectrumGraph3D: SpectrumGraph {
         SCNTransaction.animationDuration = 0.1
         SCNTransaction.begin()
         for index in columns.indices {
-            if let currColumn = columnNodes[index].geometry as? SCNShape {
-                currColumn.extrusionDepth = CGFloat(columns[index].height)
-            }
+            columns3D[index].extrusionDepth = CGFloat(columns[index].height)
+            columnNodes[index].pivot = SCNMatrix4MakeTranslation(0, 0, Float((columns[index].height)/2))
         }
         SCNTransaction.commit()
     }
@@ -49,6 +48,7 @@ class SpectrumGraph3D: SpectrumGraph {
         columns3D.append(shape)
         boxNode.geometry = shape
         columnNodes.append(boxNode)
+        boxNode.pivot = SCNMatrix4MakeTranslation(0, 0, Float(height/2))
         
         // Apply material
         shape.firstMaterial = materials.physicallyBasedWhiteMaterial
