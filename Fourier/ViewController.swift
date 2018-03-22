@@ -18,7 +18,9 @@ class ViewController: UIViewController, AudioManagerDelegate {
     private var materials = Materials()
     private var spectrumGraph3D: SpectrumGraph3D!
     
-    func setup(subView: UIView) {
+    var cameraController: CustomCameraController!
+    
+    private func setup(subView: UIView) {
         subView.translatesAutoresizingMaskIntoConstraints = false
         subView.backgroundColor = .gray
         view.addSubview(subView)
@@ -31,7 +33,7 @@ class ViewController: UIViewController, AudioManagerDelegate {
             ])
     }
     
-    func setup(scene: SCNScene) {
+    private func setup(scene: SCNScene) {
         // Set up enviornment lighting
         let lightMap = #imageLiteral(resourceName: "studio021")
         scene.lightingEnvironment.contents = lightMap
@@ -40,13 +42,14 @@ class ViewController: UIViewController, AudioManagerDelegate {
         
         // Set up camera
         let cameraNode = SCNNode()
+        let cameraOrbitNode = SCNNode()
         cameraNode.camera = SCNCamera()
         cameraNode.camera?.wantsHDR = true
-        cameraNode.camera?.exposureOffset = 2
         cameraNode.camera?.wantsExposureAdaptation = false
         cameraNode.position = SCNVector3(x:0, y:1, z:10)
-//        cameraNode.camera?.screenSpaceAmbientOcclusionIntensity = 1.0
-        scene.rootNode.addChildNode(cameraNode)
+        scene.rootNode.addChildNode(cameraOrbitNode)
+        cameraOrbitNode.addChildNode(cameraNode)
+        cameraController = CustomCameraController(for: cameraOrbitNode)
         
         // Set originNode
         let modelOriginNode = SCNNode()
@@ -71,7 +74,7 @@ class ViewController: UIViewController, AudioManagerDelegate {
         light.spotOuterAngle = 90.0
         let lightNode = SCNNode()
         lightNode.light = light
-        lightNode.position = SCNVector3(13, 10, -10)
+        lightNode.position = SCNVector3(13, 10, -13)
         lightNode.eulerAngles = SCNVector3(-2.096, -0.40739, -0.6852)
         lightNode.geometry = SCNBox(width: 0.1, height: 1, length: 0.1, chamferRadius: 0.0)
         scene.rootNode.addChildNode(lightNode)
@@ -91,8 +94,11 @@ class ViewController: UIViewController, AudioManagerDelegate {
         sceneView = SCNView()
         setup(subView: sceneView)
         sceneView.scene = scene
-        sceneView.allowsCameraControl = true
         sceneView.showsStatistics = true
+        
+        // Gesture Recognizer
+        let panGestureRecognizer = UIPanGestureRecognizer(target: cameraController, action: #selector(cameraController.handlePanGesture(sender:)))
+        sceneView.addGestureRecognizer(panGestureRecognizer)
     }
     
     override func viewDidAppear(_ animated: Bool) {
