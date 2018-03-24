@@ -14,11 +14,11 @@ import SpriteKit
 class ViewController: UIViewController, AudioManagerDelegate {
     private var audioManager = AudioManager()
     private var spectrumView: SpectrumView?
-    private var sceneView: SCNView!
     private var scene: SCNScene!
     private var materials = Materials()
     private var spectrumGraph3D: SpectrumGraph3D!
     private var cameraController: CustomCameraController!
+    @IBOutlet weak var sceneView: SCNView!
     
     private func setup(subView: UIView) {
         subView.translatesAutoresizingMaskIntoConstraints = false
@@ -90,8 +90,6 @@ class ViewController: UIViewController, AudioManagerDelegate {
         audioManager.delegate = self
         scene = SCNScene()
         setup(scene: scene)
-        sceneView = SCNView()
-        setup(subView: sceneView)
         sceneView.scene = scene
         sceneView.showsStatistics = true
         sceneView.overlaySKScene = SKMainUI(fileNamed: "SKMainUI.sks")

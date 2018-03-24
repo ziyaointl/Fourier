@@ -17,12 +17,27 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xbr-Fn-RjA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </sceneKitView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xbr-Fn-RjA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="CJc-lH-eVJ"/>
+                            <constraint firstItem="xbr-Fn-RjA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="TcS-cC-4MK"/>
+                            <constraint firstItem="xbr-Fn-RjA" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="WDV-8b-2bd"/>
+                            <constraint firstItem="xbr-Fn-RjA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Yeq-x0-GE1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="sceneView" destination="xbr-Fn-RjA" id="wFa-Mm-1vv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="115.59220389805098"/>
         </scene>
     </scenes>
 </document>
