@@ -96,6 +96,7 @@ class ViewController: UIViewController, AudioManagerDelegate {
         setup(subView: sceneView)
         sceneView.scene = scene
         sceneView.showsStatistics = true
+        sceneView.overlaySKScene = SKMainUI(fileNamed: "SKMainUI.sks")
         
         // Gesture Recognizer
         let panGestureRecognizer = UIPanGestureRecognizer(target: cameraController, action: #selector(cameraController.handlePanGesture(sender:)))
