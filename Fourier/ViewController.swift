@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import SceneKit
+import SpriteKit
 
 class ViewController: UIViewController, AudioManagerDelegate {
     private var audioManager = AudioManager()
@@ -17,12 +18,10 @@ class ViewController: UIViewController, AudioManagerDelegate {
     private var scene: SCNScene!
     private var materials = Materials()
     private var spectrumGraph3D: SpectrumGraph3D!
-    
-    var cameraController: CustomCameraController!
+    private var cameraController: CustomCameraController!
     
     private func setup(subView: UIView) {
         subView.translatesAutoresizingMaskIntoConstraints = false
-        subView.backgroundColor = .gray
         view.addSubview(subView)
         
         NSLayoutConstraint.activate([
@@ -77,7 +76,6 @@ class ViewController: UIViewController, AudioManagerDelegate {
         lightNode.light = light
         lightNode.position = SCNVector3(13, 10, -13)
         lightNode.eulerAngles = SCNVector3(-2.096, -0.40739, -0.6852)
-        lightNode.geometry = SCNBox(width: 0.1, height: 1, length: 0.1, chamferRadius: 0.0)
         scene.rootNode.addChildNode(lightNode)
         
         // Add constraints (does not work)
