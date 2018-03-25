@@ -18,7 +18,13 @@ class ViewController: UIViewController, AudioManagerDelegate {
     private var materials = Materials()
     private var spectrumGraph3D: SpectrumGraph3D!
     private var cameraController: CustomCameraController!
+    private var descriptionState: ViewState = .hidden
+    private var titleAnimation: UIViewPropertyAnimator!
     @IBOutlet weak var sceneView: SCNView!
+    @IBOutlet weak var mainUIView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var continueButton: UIButton!
     
     private func setup(subView: UIView) {
         subView.translatesAutoresizingMaskIntoConstraints = false
@@ -84,6 +90,17 @@ class ViewController: UIViewController, AudioManagerDelegate {
         // lightNode.constraints?.append(constraint)
     }
     
+    @IBAction func infoButtonPressed(_ sender: UIButton) {
+        if descriptionState == .shown {
+            titleAnimation.isReversed = true
+            descriptionState = .hidden
+        } else {
+            titleAnimation.isReversed = false
+            descriptionState = .shown
+        }
+        
+        titleAnimation.startAnimation()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,11 +109,19 @@ class ViewController: UIViewController, AudioManagerDelegate {
         setup(scene: scene)
         sceneView.scene = scene
         sceneView.showsStatistics = true
-        sceneView.overlaySKScene = SKMainUI(fileNamed: "SKMainUI.sks")
         
         // Gesture Recognizer
         let panGestureRecognizer = UIPanGestureRecognizer(target: cameraController, action: #selector(cameraController.handlePanGesture(sender:)))
-        sceneView.addGestureRecognizer(panGestureRecognizer)
+        mainUIView.addGestureRecognizer(panGestureRecognizer)
+        
+        // Animation
+        titleAnimation = UIViewPropertyAnimator.init(duration: 1.0, curve: .easeInOut, animations: { [weak self] in
+            self?.titleLabel.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+            self?.titleLabel.center = CGPoint(x: 180, y: 353)
+            self?.descriptionLabel.alpha = 1.0
+            self?.continueButton.alpha = 1.0
+        })
+        titleAnimation.pausesOnCompletion = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -114,6 +139,11 @@ class ViewController: UIViewController, AudioManagerDelegate {
         }
     }
 
+}
+
+enum ViewState {
+    case hidden
+    case shown
 }
 
 //   if let url = Bundle.main.url(forResource: "Mirror", withExtension: "mp3") {
