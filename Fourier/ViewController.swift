@@ -126,7 +126,7 @@ class ViewController: UIViewController, AudioManagerDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if let url = Bundle.main.url(forResource: "Mirror", withExtension: "mp3") {
+        if let url = Bundle.main.url(forResource: "Julie_Maxwells_Starry_Sky", withExtension: "m4a") {
             audioManager.play(fileWithURL: url)
         }
     }
@@ -146,7 +146,3 @@ enum ViewState {
     case shown
 }
 
-//   if let url = Bundle.main.url(forResource: "Mirror", withExtension: "mp3") {
-//   if let url = Bundle.main.url(forResource: "MDK - Fingerbang", withExtension: "mp3") {
-//   if let url = Bundle.main.url(forResource: "Fouler_lhorizon", withExtension: "mp3") {
-//   if let url = Bundle.main.url(forResource: "440and173", withExtension: "m4a") {
