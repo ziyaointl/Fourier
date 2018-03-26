@@ -1,8 +1,5 @@
-/*
- Copyright (C) 2016 Apple Inc. All Rights Reserved.
- See LICENSE.txt for this sample’s licensing information.
- 
- This is an example playground page.
-*/
+import PlaygroundSupport
 
-print("Hello World")
+// Present the view controller in the Live View window
+PlaygroundPage.current.liveView = MyViewController()
+

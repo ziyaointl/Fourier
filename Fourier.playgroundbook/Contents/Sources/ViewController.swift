@@ -1,29 +1,13 @@
-//
-//  ViewController.swift
-//  Fourier
-//
-//  Created by Blocry Glass on 3/15/18.
-//  Copyright © 2018 Blocry Glass. All rights reserved.
-//
-
 import UIKit
-import AVFoundation
 import SceneKit
-import SpriteKit
 
-class ViewController: UIViewController, AudioManagerDelegate {
+public class MyViewController : UIViewController, AudioManagerDelegate {
     private var audioManager = AudioManager()
     private var scene: SCNScene!
     private var materials = Materials()
     private var spectrumGraph3D: SpectrumGraph3D!
     private var cameraController: CustomCameraController!
-    private var descriptionState: ViewState = .hidden
-    private var titleAnimation: UIViewPropertyAnimator!
-    @IBOutlet weak var sceneView: SCNView!
-    @IBOutlet weak var mainUIView: UIView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var continueButton: UIButton!
+    private var sceneView: SCNView!
     
     private func setup(subView: UIView) {
         subView.translatesAutoresizingMaskIntoConstraints = false
@@ -50,6 +34,7 @@ class ViewController: UIViewController, AudioManagerDelegate {
         cameraNode.camera = SCNCamera()
         cameraNode.camera?.wantsHDR = true
         cameraNode.camera?.wantsExposureAdaptation = false
+        cameraNode.camera?.exposureOffset = -0.8
         cameraNode.position = SCNVector3(x: 0, y: 0, z: 25)
         cameraOrbitNode.position = SCNVector3(x: 0, y: 0, z: -8)
         scene.rootNode.addChildNode(cameraOrbitNode)
@@ -89,59 +74,42 @@ class ViewController: UIViewController, AudioManagerDelegate {
         // lightNode.constraints?.append(constraint)
     }
     
-    @IBAction func infoButtonPressed(_ sender: UIButton) {
-        if descriptionState == .shown {
-            titleAnimation.isReversed = true
-            descriptionState = .hidden
-        } else {
-            titleAnimation.isReversed = false
-            descriptionState = .shown
-        }
-        
-        titleAnimation.startAnimation()
+    public override func loadView() {
+        let view = UIView()
+        view.backgroundColor = .white
+        self.view = view
     }
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         audioManager.delegate = self
         scene = SCNScene()
         setup(scene: scene)
+        sceneView = SCNView()
         sceneView.scene = scene
         sceneView.showsStatistics = true
+        setup(subView: sceneView)
         
         // Gesture Recognizer
         let panGestureRecognizer = UIPanGestureRecognizer(target: cameraController, action: #selector(cameraController.handlePanGesture(sender:)))
-        mainUIView.addGestureRecognizer(panGestureRecognizer)
+        view.addGestureRecognizer(panGestureRecognizer)
         
-        // Animation
-        titleAnimation = UIViewPropertyAnimator.init(duration: 1.0, curve: .easeInOut, animations: { [weak self] in
-            self?.titleLabel.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
-            self?.titleLabel.center = CGPoint(x: 180, y: 353)
-            self?.descriptionLabel.alpha = 1.0
-            self?.continueButton.alpha = 1.0
-        })
-        titleAnimation.pausesOnCompletion = true
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        // Audio
         if let url = Bundle.main.url(forResource: "Julie_Maxwells_Starry_Sky", withExtension: "m4a") {
             audioManager.play(fileWithURL: url)
         }
     }
     
+    public override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
     // MARK: AudioManager Delegation
     
-    func didFourierTransform(_ audioManager: AudioManager, output: Array<Float>) {
+    public func didFourierTransform(_ audioManager: AudioManager, output: Array<Float>) {
         if sceneView != nil {
             spectrumGraph3D.updateColumnHeights(heightList: output)
         }
     }
-
+    
 }
-
-enum ViewState {
-    case hidden
-    case shown
-}
-

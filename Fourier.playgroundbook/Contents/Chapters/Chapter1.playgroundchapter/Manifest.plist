@@ -5,7 +5,7 @@
 	<key>Version</key>
 	<string>1.0</string>
 	<key>Name</key>
-	<string>Sample Chapter</string>
+	<string>Fourier</string>
 	<key>Pages</key>
 	<array>
 		<string>Page1.playgroundpage</string>

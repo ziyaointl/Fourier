@@ -16,7 +16,7 @@ public class SpectrumGraph {
         if numberOfColumns == 0 {
             print("Illegal number of columns")
             return
-        } else if numberOfColumns == 1{
+        } else if numberOfColumns == 1 {
             graphWidth = Float(widthPerColumn)
         } else {
             graphWidth = widthPerColumn * Float(numberOfColumns) + columnOffset * Float(numberOfColumns - 1)
@@ -43,7 +43,7 @@ public class SpectrumGraph {
                 currBinSize += 1
             }
             bins[i - 1] /= Double(currBinSize)
-            bins[i - 1] = log2(bins[i - 1] + 2) * 1.6 - 1.4
+            bins[i - 1] = log2(bins[i - 1] + 2) * 3.0 - 2.8
             currBinSize = 0
             heightIndex = Int(maxHeightIndex)
         }
