@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MeE-GW-SpZ">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -97,6 +97,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="24.609375" y="50"/>
+        </scene>
+        <!--Test View Controller-->
+        <scene sceneID="WGU-Oz-tX0">
+            <objects>
+                <viewController id="MeE-GW-SpZ" customClass="TestViewController" customModule="Fourier" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3lT-jX-P8s">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iz6-0a-8tA" customClass="PlotView" customModule="Fourier" customModuleProvider="target">
+                                <rect key="frame" x="200" y="220" width="624" height="348"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="c6P-o3-hC8" firstAttribute="bottom" secondItem="Iz6-0a-8tA" secondAttribute="bottom" constant="200" id="8Bo-S5-BjI"/>
+                            <constraint firstItem="Iz6-0a-8tA" firstAttribute="leading" secondItem="c6P-o3-hC8" secondAttribute="leading" constant="200" id="8Ox-4G-0mc"/>
+                            <constraint firstItem="Iz6-0a-8tA" firstAttribute="top" secondItem="c6P-o3-hC8" secondAttribute="top" constant="200" id="Avx-Ec-bnX"/>
+                            <constraint firstItem="c6P-o3-hC8" firstAttribute="trailing" secondItem="Iz6-0a-8tA" secondAttribute="trailing" constant="200" id="IgD-6p-9Dp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="c6P-o3-hC8"/>
+                    </view>
+                    <connections>
+                        <outlet property="plotView" destination="Iz6-0a-8tA" id="Amx-a3-ddW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fTj-Fr-FK0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="760.546875" y="50"/>
         </scene>
     </scenes>
 </document>
