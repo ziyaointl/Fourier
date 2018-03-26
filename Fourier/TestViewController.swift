@@ -21,6 +21,10 @@ class TestViewController: UIViewController {
         }
     }
 
+    @IBAction func animatePlot(_ sender: UIButton) {
+        UIView.animate(withDuration: 10, animations: {[weak self] in
+            self?.plotView.offset += 2000})
+    }
     /*
     // MARK: - Navigation
 

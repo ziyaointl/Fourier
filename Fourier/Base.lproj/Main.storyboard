@@ -110,13 +110,23 @@
                                 <rect key="frame" x="200" y="220" width="624" height="348"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0xy-bk-Ida">
+                                <rect key="frame" x="489" y="648" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="animatePlot:" destination="MeE-GW-SpZ" eventType="touchUpInside" id="lKe-D4-Oql"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="c6P-o3-hC8" firstAttribute="bottom" secondItem="Iz6-0a-8tA" secondAttribute="bottom" constant="200" id="8Bo-S5-BjI"/>
                             <constraint firstItem="Iz6-0a-8tA" firstAttribute="leading" secondItem="c6P-o3-hC8" secondAttribute="leading" constant="200" id="8Ox-4G-0mc"/>
                             <constraint firstItem="Iz6-0a-8tA" firstAttribute="top" secondItem="c6P-o3-hC8" secondAttribute="top" constant="200" id="Avx-Ec-bnX"/>
+                            <constraint firstItem="c6P-o3-hC8" firstAttribute="bottom" secondItem="0xy-bk-Ida" secondAttribute="bottom" constant="90" id="Eod-0O-eM8"/>
                             <constraint firstItem="c6P-o3-hC8" firstAttribute="trailing" secondItem="Iz6-0a-8tA" secondAttribute="trailing" constant="200" id="IgD-6p-9Dp"/>
+                            <constraint firstItem="0xy-bk-Ida" firstAttribute="top" secondItem="Iz6-0a-8tA" secondAttribute="bottom" constant="80" id="T6M-bT-w6q"/>
+                            <constraint firstItem="0xy-bk-Ida" firstAttribute="centerX" secondItem="c6P-o3-hC8" secondAttribute="centerX" id="xMZ-6T-28q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="c6P-o3-hC8"/>
                     </view>
