@@ -55,10 +55,10 @@ public class AudioManager {
         pureTonePlayerNodes[frequency]?.play()
     }
     
-    public func puase(pureToneWithFrequency frequency: Int) {
+    public func pause(pureToneWithFrequency frequency: Int) {
         let node = pureTonePlayerNodes[frequency]
         if node != nil {
-            node?.stop()
+            node?.pause()
         }
     }
 }

@@ -17,6 +17,7 @@ class AVPureTonePlayerNode: AVAudioPlayerNode {
     private let sampleRate = 44100.0
     private let amplitude = 0.25
     private let numberOfBuffers = 4
+    private var isStopped = true
     private var theta = 0.0
     
     override public init() {
@@ -57,13 +58,12 @@ class AVPureTonePlayerNode: AVAudioPlayerNode {
     }
     
     override public func play() {
-        for _ in 0..<numberOfBuffers {
-            scheduleBuffer()
+        if isStopped {
+            for _ in 0..<numberOfBuffers {
+                scheduleBuffer()
+            }
         }
+        isStopped = false
         super.play()
-    }
-    
-    override public func pause() {
-        super.stop()
     }
 }
