@@ -38,9 +38,7 @@ public class PlotView: UIView {
     override public func action(for layer: CALayer, forKey event: String) -> CAAction? {
         if event == #keyPath(offset) {
             // Check to see if there's a running animation block
-            print("Holy yea")
             if let action = super.action(for: layer, forKey: #keyPath(backgroundColor)) as? CAAnimation {
-                print("there's a action!")
                 let animation = CABasicAnimation()
                 animation.keyPath = event
                 animation.fromValue = plotLayer.offset
