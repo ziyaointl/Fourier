@@ -104,6 +104,7 @@ class ViewController: UIViewController, AudioManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         audioManager.delegate = self
+        audioManager.installTap = true
         scene = SCNScene()
         setup(scene: scene)
         sceneView.scene = scene

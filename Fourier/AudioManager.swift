@@ -13,8 +13,9 @@ import Accelerate
 public class AudioManager {
     private let audioEngine = AVAudioEngine()
     private let audioNode = AVAudioPlayerNode()
-    public weak var delegate: AudioManagerDelegate?
     private let fftHelper = FFTHelper()
+    public weak var delegate: AudioManagerDelegate?
+    public var installTap = false
     
     public init() {
         audioEngine.attach(audioNode)
@@ -28,11 +29,13 @@ public class AudioManager {
             audioNode.scheduleBuffer(buffer, at: nil, options: .loops, completionHandler: nil)
             
             // Install tap
-            let bufferSize: UInt32 = 4000
-            let mixerNode = audioEngine.mainMixerNode
-            mixerNode.installTap(onBus: 0, bufferSize: bufferSize, format: mixerNode.outputFormat(forBus: 0)) { (buffer, time) in
-                buffer.frameLength = bufferSize
-                self.fftHelper.fourierTransform(buffer: buffer, audioManager: self) // possible memory cycle
+            if installTap {
+                let bufferSize: UInt32 = 4000
+                let mixerNode = audioEngine.mainMixerNode
+                mixerNode.installTap(onBus: 0, bufferSize: bufferSize, format: mixerNode.outputFormat(forBus: 0)) { (buffer, time) in
+                    buffer.frameLength = bufferSize
+                    self.fftHelper.fourierTransform(buffer: buffer, audioManager: self) // possible memory cycle
+                }
             }
             
             // Start Playing
