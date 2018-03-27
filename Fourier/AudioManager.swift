@@ -54,4 +54,11 @@ public class AudioManager {
         try? audioEngine.start()
         pureTonePlayerNodes[frequency]?.play()
     }
+    
+    public func puase(pureToneWithFrequency frequency: Int) {
+        let node = pureTonePlayerNodes[frequency]
+        if node != nil {
+            node?.stop()
+        }
+    }
 }
