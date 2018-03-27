@@ -12,19 +12,17 @@ import Accelerate
 
 public class AudioManager {
     private let audioEngine = AVAudioEngine()
-    private let audioNode = AVAudioPlayerNode()
     private let fftHelper = FFTHelper()
+    private var pureTonePlayerNodes = [Int: AVPureTonePlayerNode]()
     public weak var delegate: AudioManagerDelegate?
     public var installTap = false
-    
-    public init() {
-        audioEngine.attach(audioNode)
-    }
     
     public func play(fileWithURL url: URL) {
         if let inputFile = try? AVAudioFile(forReading: url) {
             let buffer = AVAudioPCMBuffer(pcmFormat: inputFile.processingFormat, frameCapacity: AVAudioFrameCount(inputFile.length))!
             try? inputFile.read(into: buffer)
+            let audioNode = AVAudioPlayerNode()
+            audioEngine.attach(audioNode)
             audioEngine.connect(audioNode, to: audioEngine.mainMixerNode, format: buffer.format)
             audioNode.scheduleBuffer(buffer, at: nil, options: .loops, completionHandler: nil)
             
@@ -42,5 +40,18 @@ public class AudioManager {
             try? audioEngine.start()
             audioNode.play()
         }
+    }
+    
+    public func play(pureToneWithFrequency frequency: Int) {
+        // Create audio node if it does not exist
+        if pureTonePlayerNodes[frequency] == nil {
+            let node = AVPureTonePlayerNode()
+            node.frequency = Double(frequency)
+            audioEngine.attach(node)
+            audioEngine.connect(node, to: audioEngine.mainMixerNode, format: node.format)
+            pureTonePlayerNodes[frequency] = node
+        }
+        try? audioEngine.start()
+        pureTonePlayerNodes[frequency]?.play()
     }
 }
