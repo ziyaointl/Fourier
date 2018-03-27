@@ -10,6 +10,7 @@ import UIKit
 
 class TestViewController: UIViewController {
     private let audioManager = AudioManager()
+    private var isPlaying = false
     
     @IBOutlet weak var plotView: PlotView!
     override func viewDidLoad() {
@@ -25,7 +26,12 @@ class TestViewController: UIViewController {
     @IBAction func animatePlot(_ sender: UIButton) {
         UIView.animate(withDuration: 10, animations: {[weak self] in
             self?.plotView.offset += 2000})
-        audioManager.play(pureToneWithFrequency: 440)
+        if isPlaying {
+            audioManager.pause(pureToneWithFrequency: 440)
+        } else {
+            audioManager.play(pureToneWithFrequency: 440)
+        }
+        isPlaying = !isPlaying
     }
     /*
     // MARK: - Navigation
