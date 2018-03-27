@@ -9,7 +9,8 @@
 import UIKit
 
 class TestViewController: UIViewController {
-
+    private let audioManager = AudioManager()
+    
     @IBOutlet weak var plotView: PlotView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,7 @@ class TestViewController: UIViewController {
     @IBAction func animatePlot(_ sender: UIButton) {
         UIView.animate(withDuration: 10, animations: {[weak self] in
             self?.plotView.offset += 2000})
+        audioManager.play(pureToneWithFrequency: 440)
     }
     /*
     // MARK: - Navigation
