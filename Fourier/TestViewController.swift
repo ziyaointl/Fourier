@@ -24,11 +24,22 @@ class TestViewController: UIViewController {
     }
 
     @IBAction func animatePlot(_ sender: UIButton) {
-        UIView.animate(withDuration: 10, animations: {[weak self] in
-            self?.plotView.offset += 2000})
         if isPlaying {
             audioManager.pause(pureToneWithFrequency: 440)
         } else {
+            let animationBlock: () -> Void = {[weak self] in
+                self?.plotView.offset += 20 * .pi
+            }
+            func animate() {
+                if self.isPlaying {
+                    UIView.animate(withDuration: 0.1, delay: 0.0, options: .curveLinear, animations: animationBlock, completion: { _ in
+                        animate()
+                    })
+                }
+            }
+            DispatchQueue.main.async {
+                animate()
+            }
             audioManager.play(pureToneWithFrequency: 440)
         }
         isPlaying = !isPlaying
