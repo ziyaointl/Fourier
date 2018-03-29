@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MeE-GW-SpZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="581-zO-OAw">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -137,6 +137,75 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fTj-Fr-FK0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="760.546875" y="50"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="U7z-Fr-y24">
+            <objects>
+                <viewController id="581-zO-OAw" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IjF-kC-55d">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="daU-wH-yBO">
+                                <rect key="frame" x="140" y="321" width="744" height="126"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="vRr-9B-TB7" kind="embed" id="sgu-eE-kEv"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="gvn-SU-w1D"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UZr-yj-vCC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="24.609375" y="1003.90625"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Gld-RT-3l9">
+            <objects>
+                <viewController id="hXX-rT-zYT" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E3w-JD-pb7">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qAo-uk-M68" customClass="WaveformView" customModule="Fourier" customModuleProvider="target">
+                                <rect key="frame" x="97" y="169" width="830" height="136"/>
+                                <color key="backgroundColor" white="0.95999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="136" id="7LP-W6-XQP"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.95999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yQz-LN-gJp" firstAttribute="trailing" secondItem="qAo-uk-M68" secondAttribute="trailing" constant="97" id="4Wj-GV-TMX"/>
+                            <constraint firstItem="yQz-LN-gJp" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="qAo-uk-M68" secondAttribute="bottom" constant="12" id="9B6-lt-WcE"/>
+                            <constraint firstItem="qAo-uk-M68" firstAttribute="leading" secondItem="yQz-LN-gJp" secondAttribute="leading" constant="97" id="Jmt-v7-nCa"/>
+                            <constraint firstItem="qAo-uk-M68" firstAttribute="top" secondItem="yQz-LN-gJp" secondAttribute="top" constant="149" id="LgP-Yq-uhO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yQz-LN-gJp"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zB7-FS-oik" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="760" y="1004"/>
+        </scene>
+        <!--Waveform View Controller-->
+        <scene sceneID="Lfv-Ta-bqo">
+            <objects>
+                <viewController id="vRr-9B-TB7" customClass="WaveformViewController" customModule="Fourier" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nsa-pz-LfV">
+                        <rect key="frame" x="0.0" y="0.0" width="744" height="126"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="AsO-25-mKj"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uri-7l-iDJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="25" y="1558"/>
         </scene>
     </scenes>
 </document>

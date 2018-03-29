@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ionicons.ttf">
+            <string>Ionicons</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WaveformView" customModule="Fourier" customModuleProvider="target">
+            <connections>
+                <outlet property="playButton" destination="4Ax-7l-sEw" id="cyb-Hk-c5K"/>
+                <outlet property="plotView" destination="rMz-r2-tQ7" id="ypO-wq-6KK"/>
+                <outlet property="title" destination="DeR-RW-SXn" id="Dzv-qe-zGZ"/>
+                <outlet property="view" destination="6Al-U3-Ts0" id="fRP-oy-hDV"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Al-U3-Ts0">
+            <rect key="frame" x="0.0" y="0.0" width="685" height="126"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rMz-r2-tQ7" customClass="PlotView" customModule="Fourier" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="53" width="582" height="73"/>
+                    <color key="backgroundColor" white="0.95999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="440 Hz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DeR-RW-SXn">
+                    <rect key="frame" x="0.0" y="0.0" width="685" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="ZJt-dR-kQW"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="29"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ax-7l-sEw">
+                    <rect key="frame" x="612" y="53" width="73" height="73"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="4Ax-7l-sEw" secondAttribute="height" multiplier="1:1" id="gdW-oE-m4h"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Ionicons" family="Ionicons" pointSize="50"/>
+                    <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="">
+                        <color key="titleColor" white="0.29079861109999999" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="playButtonPressed:" destination="-1" eventType="touchUpInside" id="v2R-4z-dsl"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.95999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="4Ax-7l-sEw" firstAttribute="bottom" secondItem="rMz-r2-tQ7" secondAttribute="bottom" id="2ww-kS-6XM"/>
+                <constraint firstItem="DeR-RW-SXn" firstAttribute="leading" secondItem="rMz-r2-tQ7" secondAttribute="leading" id="Gp4-Mj-VlK"/>
+                <constraint firstItem="DeR-RW-SXn" firstAttribute="top" secondItem="6Al-U3-Ts0" secondAttribute="top" id="HpP-5E-6bO"/>
+                <constraint firstAttribute="trailing" secondItem="DeR-RW-SXn" secondAttribute="trailing" id="U4s-Kf-0nH"/>
+                <constraint firstItem="DeR-RW-SXn" firstAttribute="leading" secondItem="6Al-U3-Ts0" secondAttribute="leading" id="X2M-Jf-wpf"/>
+                <constraint firstAttribute="trailing" secondItem="4Ax-7l-sEw" secondAttribute="trailing" id="ZLf-HX-vg0"/>
+                <constraint firstItem="4Ax-7l-sEw" firstAttribute="top" secondItem="DeR-RW-SXn" secondAttribute="bottom" constant="13" id="sPs-ma-9oZ"/>
+                <constraint firstItem="4Ax-7l-sEw" firstAttribute="leading" secondItem="rMz-r2-tQ7" secondAttribute="trailing" constant="30" id="tgd-NU-5eR"/>
+                <constraint firstItem="4Ax-7l-sEw" firstAttribute="top" secondItem="rMz-r2-tQ7" secondAttribute="top" id="upA-ZT-xQZ"/>
+                <constraint firstAttribute="bottom" secondItem="4Ax-7l-sEw" secondAttribute="bottom" id="ylV-sa-jIt"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-211.5" y="-514"/>
+        </view>
+    </objects>
+</document>
