@@ -30,6 +30,10 @@ public class WaveformView: UIView {
     }
 }
 
+public protocol WaveformViewDelegate {
+    func playButtonPressed(sender: UIButton)
+}
+
 extension UIView {
     @discardableResult
     public func fromNib<T : UIView>() -> T? {
