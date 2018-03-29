@@ -15,7 +15,15 @@ public class WaveformViewController: UIViewController, WaveformViewDelegate {
     }
     
     public var mediaType = MediaType.frequency(440)
+    public var titleText: String = "Title" {
+        didSet {
+            if let label = titleLabel {
+                label.text = titleText
+            }
+        }
+    }
     private var mainView: WaveformView!
+    private var titleLabel: UILabel!
     private var playButton: UIButton!
     private var plotView: PlotView!
     private var isPlaying = false
@@ -30,7 +38,7 @@ public class WaveformViewController: UIViewController, WaveformViewDelegate {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        plotView = mainView.plotView!
+        plotView = mainView.plotView
         plotView.includeNegativeYAxis = true
         plotView.contentMode = .redraw
         plotView.currentFunction = {x in
@@ -38,14 +46,15 @@ public class WaveformViewController: UIViewController, WaveformViewDelegate {
             return sin(x) * 30
         }
         
-        playButton = mainView.playButton!
+        playButton = mainView.playButton
         playButton.titleLabel?.font = UIFont(name: "Ionicons", size: 50)!
         playButton.layer.borderColor = #colorLiteral(red: 0.3627791107, green: 0.3627791107, blue: 0.3627791107, alpha: 1)
         playButton.layer.cornerRadius = playButton.bounds.width / 2
         playButton.layer.borderWidth = 2.0
         
-        let title = mainView.title!
-        title.textColor = #colorLiteral(red: 0.3627791107, green: 0.3627791107, blue: 0.3627791107, alpha: 1)
+        titleLabel = mainView.title
+        titleLabel.text = titleText
+        titleLabel.textColor = #colorLiteral(red: 0.3627791107, green: 0.3627791107, blue: 0.3627791107, alpha: 1)
     }
     
     override public func viewWillAppear(_ animated: Bool) {

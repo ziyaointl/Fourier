@@ -29,12 +29,12 @@ public class WaveformTableViewController: UIViewController, UITableViewDelegate,
         tableView.dataSource = self
         tableView.delegate = self
         view.fillSelfWith(subView: tableView)
-        
-        addWaveForm(withFrequency: 440)
     }
     
     public func addWaveForm(withFrequency frequency: Int) {
         let waveFormViewController = WaveformViewController()
+        waveFormViewController.mediaType = .frequency(frequency)
+        waveFormViewController.titleText = String(frequency) + " Hz"
         waveFormViewControllers.append(waveFormViewController)
     }
 }
