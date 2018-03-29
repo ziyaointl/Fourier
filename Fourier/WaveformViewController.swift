@@ -22,6 +22,13 @@ public class WaveformViewController: UIViewController, WaveformViewDelegate {
             }
         }
     }
+    public var currentFunction: (Double) -> Double = {x in return x} {
+        didSet {
+            if let plot = plotView {
+                plot.currentFunction = currentFunction
+            }
+        }
+    }
     private var mainView: WaveformView!
     private var titleLabel: UILabel!
     private var playButton: UIButton!
@@ -41,10 +48,7 @@ public class WaveformViewController: UIViewController, WaveformViewDelegate {
         plotView = mainView.plotView
         plotView.includeNegativeYAxis = true
         plotView.contentMode = .redraw
-        plotView.currentFunction = {x in
-            let x = 0.1 * x
-            return sin(x) * 30
-        }
+        plotView.currentFunction = currentFunction
         
         playButton = mainView.playButton
         playButton.titleLabel?.font = UIFont(name: "Ionicons", size: 50)!

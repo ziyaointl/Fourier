@@ -29,13 +29,17 @@ public class WaveformTableViewController: UIViewController, UITableViewDelegate,
         tableView.dataSource = self
         tableView.delegate = self
         view.fillSelfWith(subView: tableView)
+        
+        addWaveForm(withFrequency: 440)
+        addWaveForm(withFrequency: 880)
+        addWaveForm(withFrequency: 1320)
     }
     
     public func addWaveForm(withFrequency frequency: Int) {
         let waveFormViewController = WaveformViewController()
         waveFormViewController.mediaType = .frequency(frequency)
         waveFormViewController.titleText = String(frequency) + " Hz"
+        waveFormViewController.currentFunction = SineFunctionGenerator.generateSineForPlotting(withFrequency: frequency)
         waveFormViewControllers.append(waveFormViewController)
     }
 }
-
