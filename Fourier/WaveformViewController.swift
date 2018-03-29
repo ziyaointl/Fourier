@@ -9,15 +9,17 @@
 import UIKit
 
 public class WaveformViewController: UIViewController, WaveformViewDelegate {
-    struct Icons {
+    struct Icon {
         static let play = ""
         static let pause = ""
     }
     
+    public var mediaType = MediaType.frequency(440)
     private var mainView: WaveformView!
     private var playButton: UIButton!
     private var plotView: PlotView!
     private var isPlaying = false
+    private var audioManager = AudioManager()
     
     override public func loadView() {
         super.loadView()
@@ -52,11 +54,13 @@ public class WaveformViewController: UIViewController, WaveformViewDelegate {
     
     public func playButtonPressed(sender: UIButton) {
         if isPlaying {
-            playButton.setTitle(Icons.play, for: .normal)
+            playButton.setTitle(Icon.play, for: .normal)
             playButton.titleEdgeInsets = UIEdgeInsetsMake(0.0, 5.0, 0.0, 0.0)
+            pauseAudio()
         } else {
-            playButton.setTitle(Icons.pause, for: .normal)
+            playButton.setTitle(Icon.pause, for: .normal)
             playButton.titleEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)
+            playAudio()
             startAnimation()
         }
         isPlaying = !isPlaying
@@ -77,4 +81,27 @@ public class WaveformViewController: UIViewController, WaveformViewDelegate {
             animate()
         }
     }
+    
+    private func playAudio() {
+        switch mediaType {
+        case let .frequency(frequency):
+            audioManager.play(pureToneWithFrequency: frequency)
+        case let .file(url):
+            break
+        }
+    }
+    
+    private func pauseAudio() {
+        switch mediaType {
+        case let .frequency(frequency):
+            audioManager.pause(pureToneWithFrequency: frequency)
+        case let .file(url):
+            break
+        }
+    }
+}
+
+public enum MediaType {
+    case frequency(Int)
+    case file(String)
 }
