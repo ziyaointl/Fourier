@@ -25,18 +25,6 @@ class ViewController: UIViewController, AudioManagerDelegate {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var continueButton: UIButton!
     
-    private func setup(subView: UIView) {
-        subView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(subView)
-        
-        NSLayoutConstraint.activate([
-            subView.topAnchor.constraint(equalTo: view.topAnchor),
-            subView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            subView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            subView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-            ])
-    }
-    
     private func setup(scene: SCNScene) {
         // Set up enviornment lighting
         let lightMap = #imageLiteral(resourceName: "studio021")

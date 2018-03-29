@@ -19,6 +19,8 @@
 		989729EC206C680A007797F8 /* WaveformView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 989729EB206C680A007797F8 /* WaveformView.xib */; };
 		989729EE206C84B5007797F8 /* WaveformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989729ED206C84B5007797F8 /* WaveformView.swift */; };
 		989729F2206C95BE007797F8 /* WaveformViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989729F1206C95BE007797F8 /* WaveformViewController.swift */; };
+		98AF585B206D036C00E5C898 /* WaveformTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AF5859206D036C00E5C898 /* WaveformTableViewController.swift */; };
+		98AF585E206D099900E5C898 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AF585D206D099900E5C898 /* UIViewExtensions.swift */; };
 		98B6DA15205A53E4009B54E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B6DA14205A53E4009B54E7 /* AppDelegate.swift */; };
 		98B6DA17205A53E5009B54E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B6DA16205A53E5009B54E7 /* ViewController.swift */; };
 		98B6DA1A205A53E5009B54E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98B6DA18205A53E5009B54E7 /* Main.storyboard */; };
@@ -49,6 +51,8 @@
 		989729EB206C680A007797F8 /* WaveformView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WaveformView.xib; sourceTree = "<group>"; };
 		989729ED206C84B5007797F8 /* WaveformView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveformView.swift; sourceTree = "<group>"; };
 		989729F1206C95BE007797F8 /* WaveformViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveformViewController.swift; sourceTree = "<group>"; };
+		98AF5859206D036C00E5C898 /* WaveformTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveformTableViewController.swift; sourceTree = "<group>"; };
+		98AF585D206D099900E5C898 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		98B6DA11205A53E4009B54E7 /* Fourier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fourier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98B6DA14205A53E4009B54E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98B6DA16205A53E5009B54E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -114,7 +118,9 @@
 				98B6DA18205A53E5009B54E7 /* Main.storyboard */,
 				989729EB206C680A007797F8 /* WaveformView.xib */,
 				989729ED206C84B5007797F8 /* WaveformView.swift */,
+				98AF585D206D099900E5C898 /* UIViewExtensions.swift */,
 				989729F1206C95BE007797F8 /* WaveformViewController.swift */,
+				98AF5859206D036C00E5C898 /* WaveformTableViewController.swift */,
 				98DFA521206894790072C7BA /* TestViewController.swift */,
 				98B6DA2C205A63F2009B54E7 /* SpectrumView.swift */,
 				98D5AA02205ABD74003BDA7F /* Mirror.mp3 */,
@@ -216,6 +222,7 @@
 				98B6DA2D205A63F2009B54E7 /* SpectrumView.swift in Sources */,
 				98D5AA07205B5583003BDA7F /* AudioManagerDelegate.swift in Sources */,
 				98DFA522206894790072C7BA /* TestViewController.swift in Sources */,
+				98AF585B206D036C00E5C898 /* WaveformTableViewController.swift in Sources */,
 				98D5AA05205B53C3003BDA7F /* AudioManager.swift in Sources */,
 				9816E94C205D200200B757C5 /* SpectrumGraph3D.swift in Sources */,
 				98DFA520206890E00072C7BA /* PlotView.swift in Sources */,
@@ -225,6 +232,7 @@
 				9816E9502060812200B757C5 /* FFTHelper.swift in Sources */,
 				989729F2206C95BE007797F8 /* WaveformViewController.swift in Sources */,
 				98B6DA15205A53E4009B54E7 /* AppDelegate.swift in Sources */,
+				98AF585E206D099900E5C898 /* UIViewExtensions.swift in Sources */,
 				989729EE206C84B5007797F8 /* WaveformView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
