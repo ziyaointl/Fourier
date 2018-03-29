@@ -146,15 +146,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="daU-wH-yBO">
-                                <rect key="frame" x="140" y="321" width="744" height="126"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="daU-wH-yBO">
+                                <rect key="frame" x="140" y="331" width="744" height="126"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="126" id="cAo-jg-zUk"/>
+                                </constraints>
                                 <connections>
                                     <segue destination="vRr-9B-TB7" kind="embed" id="sgu-eE-kEv"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gvn-SU-w1D" firstAttribute="trailing" secondItem="daU-wH-yBO" secondAttribute="trailing" constant="140" id="2qL-V5-13u"/>
+                            <constraint firstItem="daU-wH-yBO" firstAttribute="centerY" secondItem="gvn-SU-w1D" secondAttribute="centerY" id="dmJ-mX-lrG"/>
+                            <constraint firstItem="daU-wH-yBO" firstAttribute="leading" secondItem="gvn-SU-w1D" secondAttribute="leading" constant="140" id="eFZ-pl-dRt"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="gvn-SU-w1D"/>
                     </view>
                 </viewController>

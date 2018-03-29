@@ -16,6 +16,7 @@ public class WaveformViewController: UIViewController, WaveformViewDelegate {
     
     private var mainView: WaveformView!
     private var playButton: UIButton!
+    private var plotView: PlotView!
     private var isPlaying = false
     
     override public func loadView() {
@@ -27,7 +28,7 @@ public class WaveformViewController: UIViewController, WaveformViewDelegate {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        let plotView = mainView.plotView!
+        plotView = mainView.plotView!
         plotView.includeNegativeYAxis = true
         plotView.contentMode = .redraw
         plotView.currentFunction = {x in
@@ -56,7 +57,24 @@ public class WaveformViewController: UIViewController, WaveformViewDelegate {
         } else {
             playButton.setTitle(Icons.pause, for: .normal)
             playButton.titleEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)
+            startAnimation()
         }
         isPlaying = !isPlaying
+    }
+    
+    private func startAnimation() {
+        let animationBlock: () -> Void = {[weak self] in
+            self?.plotView.offset += 30 * .pi
+        }
+        func animate() {
+            if self.isPlaying {
+                UIView.animate(withDuration: 0.1, delay: 0.0, options: .curveLinear, animations: animationBlock, completion: { _ in
+                    animate()
+                })
+            }
+        }
+        DispatchQueue.main.async {
+            animate()
+        }
     }
 }
