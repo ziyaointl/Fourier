@@ -1,8 +1,7 @@
-/*
- Copyright (C) 2016 Apple Inc. All Rights Reserved.
- See LICENSE.txt for this sample’s licensing information.
+/*:
+ Sound waves vibrations traveling through air, like ripples traveling through water. When an object vibrates, it compresses and decompresses the air around it, creating a sound.
  
- This is a second example page.
-*/
-
-print("Hello World")
+ On the execution result screen, you can see a simple sound wave.
+ 
+ The horizontal axis shows time, while the vertical axis shows the relative pressure of the air
+ */

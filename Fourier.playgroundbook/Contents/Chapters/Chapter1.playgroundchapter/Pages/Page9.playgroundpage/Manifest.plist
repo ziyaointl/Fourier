@@ -5,10 +5,10 @@
 	<key>Version</key>
 	<string>1.0</string>
 	<key>Name</key>
-	<string>Soundwaves</string>
-	<key>LiveViewMode</key>
-	<string>VisibleByDefault</string>
+	<string>Fourier Transform on Complex Tone</string>
 	<key>LiveViewEdgeToEdge</key>
 	<true/>
+	<key>LiveViewMode</key>
+	<string>VisibleByDefault</string>
 </dict>
 </plist>
