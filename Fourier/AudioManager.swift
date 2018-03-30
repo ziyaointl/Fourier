@@ -25,11 +25,15 @@ public class AudioManager {
         AudioManager.audioEngine.connect(audioFilePlayerNode, to: AudioManager.audioEngine.mainMixerNode, format: audioFilePlayerNode.outputFormat(forBus: 0))
     }
     
-    public func play(fileWithURL url: URL) {
+    public func play(fileWithURL url: URL, loop: Bool) {
         if let inputFile = try? AVAudioFile(forReading: url) {
             let buffer = AVAudioPCMBuffer(pcmFormat: inputFile.processingFormat, frameCapacity: AVAudioFrameCount(inputFile.length))!
             try? inputFile.read(into: buffer)
-            audioFilePlayerNode.scheduleBuffer(buffer, at: nil, options: .loops, completionHandler: nil)
+            if loop {
+                 audioFilePlayerNode.scheduleBuffer(buffer, at: nil, options: .loops, completionHandler: nil)
+            } else {
+                 audioFilePlayerNode.scheduleBuffer(buffer, at: nil, options: [], completionHandler: nil)
+            }
             
             // Install tap
             // If true, a delegate is required to accept the FFT result
