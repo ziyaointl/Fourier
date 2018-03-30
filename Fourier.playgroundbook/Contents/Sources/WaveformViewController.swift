@@ -47,7 +47,7 @@ public class WaveformViewController: UIViewController, WaveformViewDelegate {
         super.viewDidLoad()
         // Load font
         if !UIFont.familyNames.contains("Ionicons") {
-            let url = Bundle.main.url(forResource: "ionicons", withExtension: "ttf") as! CFURL
+            let url = Bundle.main.url(forResource: "ionicons", withExtension: "ttf")! as CFURL
             CTFontManagerRegisterFontsForURL(url, CTFontManagerScope.process, nil)
         }
         

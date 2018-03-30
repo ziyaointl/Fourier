@@ -17,7 +17,14 @@
 		<key>Added</key>
 		<array/>
 		<key>Modified</key>
-		<array/>
+		<array>
+			<dict>
+				<key>Diff</key>
+				<string>Chapters/Chapter1.playgroundchapter/Pages/Page4.playgroundpage/Contents.swift.delta</string>
+				<key>File</key>
+				<string>Chapters/Chapter1.playgroundchapter/Pages/Page4.playgroundpage/Contents.swift</string>
+			</dict>
+		</array>
 		<key>Removed</key>
 		<array/>
 		<key>Replaced</key>
