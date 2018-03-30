@@ -9,7 +9,6 @@
  */
 //#-hidden-code
 import PlaygroundSupport
-import UIKit
 
 let waveformTableViewController = WaveformTableViewController()
 func createWave(withFrequency frequency: Int) {
