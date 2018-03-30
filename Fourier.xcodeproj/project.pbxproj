@@ -48,7 +48,7 @@
 		9816E94D205D240500B757C5 /* Materials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Materials.swift; sourceTree = "<group>"; };
 		9816E94F2060812200B757C5 /* FFTHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFTHelper.swift; sourceTree = "<group>"; };
 		9816E9512063564300B757C5 /* CustomCameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCameraController.swift; sourceTree = "<group>"; };
-		98187D3E206D8521006DC143 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Fourier/Constants.swift; sourceTree = "<group>"; };
+		98187D3E206D8521006DC143 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9834EDEE2063CFB500087000 /* ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ionicons.ttf; sourceTree = "<group>"; };
 		9846D2A32067A9EF00C88975 /* Julie_Maxwells_Starry_Sky.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Julie_Maxwells_Starry_Sky.m4a; sourceTree = "<group>"; };
 		989729EB206C680A007797F8 /* WaveformView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WaveformView.xib; sourceTree = "<group>"; };
@@ -56,7 +56,7 @@
 		989729F1206C95BE007797F8 /* WaveformViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveformViewController.swift; sourceTree = "<group>"; };
 		98AF5859206D036C00E5C898 /* WaveformTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveformTableViewController.swift; sourceTree = "<group>"; };
 		98AF585D206D099900E5C898 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
-		98AF585F206D201000E5C898 /* SineFunctionGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SineFunctionGenerator.swift; path = Fourier/SineFunctionGenerator.swift; sourceTree = "<group>"; };
+		98AF585F206D201000E5C898 /* SineFunctionGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SineFunctionGenerator.swift; sourceTree = "<group>"; };
 		98B6DA11205A53E4009B54E7 /* Fourier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fourier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98B6DA14205A53E4009B54E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98B6DA16205A53E5009B54E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -90,8 +90,6 @@
 		98B6DA08205A53E4009B54E7 = {
 			isa = PBXGroup;
 			children = (
-				98AF585F206D201000E5C898 /* SineFunctionGenerator.swift */,
-				98187D3E206D8521006DC143 /* Constants.swift */,
 				98B6DA13205A53E4009B54E7 /* Fourier */,
 				98B6DA12205A53E4009B54E7 /* Products */,
 			);
@@ -108,6 +106,8 @@
 		98B6DA13205A53E4009B54E7 /* Fourier */ = {
 			isa = PBXGroup;
 			children = (
+				98AF585F206D201000E5C898 /* SineFunctionGenerator.swift */,
+				98187D3E206D8521006DC143 /* Constants.swift */,
 				98B6DA14205A53E4009B54E7 /* AppDelegate.swift */,
 				98B6DA16205A53E5009B54E7 /* ViewController.swift */,
 				98DFA51F206890E00072C7BA /* PlotView.swift */,

@@ -34,4 +34,17 @@ public extension UIView {
             subView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -inset)
             ])
     }
+    
+    public func addAndCenterSubview(subView: UIView, subViewHeight height: CGFloat, horizontalInset inset: CGFloat) {
+        subView.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(subView)
+        
+        NSLayoutConstraint.activate([
+            subView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            subView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            subView.heightAnchor.constraint(equalToConstant: height),
+            subView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: inset),
+            subView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -inset)
+            ])
+    }
 }
