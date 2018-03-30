@@ -23,16 +23,27 @@ public class WaveformTableViewController: UIViewController, UITableViewDelegate,
         return cell
     }
 
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return Constants.Table.RowHeight
+    }
+    
     override public func viewDidLoad() {
         super.viewDidLoad()
         tableView = UITableView()
         tableView.dataSource = self
         tableView.delegate = self
-        view.fillSelfWith(subView: tableView)
+        tableView.allowsSelection = false
+        tableView.backgroundColor = Constants.Colors.Background
+        self.view.backgroundColor = Constants.Colors.Background
+        view.fillSelfWith(subView: tableView, inset: 100)
         
+        addWaveForm(withFrequency: 1)
+        addWaveForm(withFrequency: 30)
         addWaveForm(withFrequency: 440)
         addWaveForm(withFrequency: 880)
         addWaveForm(withFrequency: 1320)
+        addWaveForm(withFrequency: 10000)
+        addWaveForm(withFrequency: 20000)
     }
     
     public func addWaveForm(withFrequency frequency: Int) {
