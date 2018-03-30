@@ -15,7 +15,7 @@ public class SineFunctionGenerator {
     
     public static func generateSineForPlotting(withFrequency frequency: Int) -> ((Double) -> Double) {
         let generatedFunction: (Double) -> Double = { x in
-            let x = x * xMultiplier * Double(frequency / baseFrequency)
+            let x = x * xMultiplier * (Double(frequency) / Double(baseFrequency))
             return sin(x) * Double(yMultiplier)
         }
         return generatedFunction

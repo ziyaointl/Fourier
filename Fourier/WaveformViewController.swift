@@ -81,7 +81,7 @@ public class WaveformViewController: UIViewController, WaveformViewDelegate {
     
     private func startAnimation() {
         let animationBlock: () -> Void = {[weak self] in
-            self?.plotView.offset += 30 * .pi
+            self?.plotView.offset += 1600 * .pi
         }
         func animate() {
             if self.isPlaying {
