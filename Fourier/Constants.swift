@@ -11,10 +11,10 @@ import UIKit
 
 public struct Constants {
     public struct Table {
-        static let RowHeight: CGFloat = 126.0
+        public static let RowHeight: CGFloat = 126.0
     }
     
     public struct Colors {
-        static let Background = #colorLiteral(red: 0.9599999785, green: 0.9599999785, blue: 0.9599999785, alpha: 1)
+        public static let Background = #colorLiteral(red: 0.9599999785, green: 0.9599999785, blue: 0.9599999785, alpha: 1)
     }
 }

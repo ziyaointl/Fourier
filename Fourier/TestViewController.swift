@@ -11,7 +11,10 @@ import UIKit
 class TestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        let subViewController = WaveformViewController()
-        self.view.addAndCenterSubview(subView: subViewController.view, subViewHeight: 126, horizontalInset: 20)
+        let subView = PlotView()
+        subView.backgroundColor = Constants.Colors.Background
+        subView.includeNegativeYAxis = true
+        subView.currentFunction = SineFunctionGenerator.generateSineForPlotting(withFrequency: 440)
+        self.view.addAndCenterSubview(subView: subView, subViewHeight: 126, horizontalInset: 20)
     }
 }
