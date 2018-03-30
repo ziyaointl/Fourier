@@ -5,5 +5,5 @@
 //#-hidden-code
 import PlaygroundSupport
 
-PlaygroundPage.current.liveView = MyViewController()
+PlaygroundPage.current.liveView = FirstPageViewController()
 //#-end-hidden-code

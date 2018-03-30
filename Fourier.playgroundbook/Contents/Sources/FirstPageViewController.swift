@@ -1,7 +1,7 @@
 import UIKit
 import SceneKit
 
-public class MyViewController : UIViewController, AudioManagerDelegate {
+public class FirstPageViewController: UIViewController, AudioManagerDelegate {
     private var audioManager = AudioManager()
     private var scene: SCNScene!
     private var materials = Materials()
@@ -83,11 +83,11 @@ public class MyViewController : UIViewController, AudioManagerDelegate {
     public override func viewDidLoad() {
         super.viewDidLoad()
         audioManager.delegate = self
+        audioManager.installTap = true
         scene = SCNScene()
         setup(scene: scene)
         sceneView = SCNView()
         sceneView.scene = scene
-        sceneView.showsStatistics = true
         setup(subView: sceneView)
         
         // Gesture Recognizer
