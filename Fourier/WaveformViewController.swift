@@ -45,6 +45,12 @@ public class WaveformViewController: UIViewController, WaveformViewDelegate {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
+        // Load font
+        if !UIFont.familyNames.contains("Ionicons") {
+            let url = Bundle.main.url(forResource: "ionicons", withExtension: "ttf") as! CFURL
+            CTFontManagerRegisterFontsForURL(url, CTFontManagerScope.process, nil)
+        }
+        
         plotView = mainView.plotView
         plotView.includeNegativeYAxis = true
         plotView.contentMode = .redraw
@@ -118,3 +124,4 @@ public enum MediaType {
     case frequency(Int)
     case file(String)
 }
+

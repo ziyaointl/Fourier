@@ -11,10 +11,10 @@ import UIKit
 class TestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        let subView = PlotView()
-        subView.backgroundColor = Constants.Colors.Background
-        subView.includeNegativeYAxis = true
-        subView.currentFunction = SineFunctionGenerator.generateSineForPlotting(withFrequency: 440)
-        self.view.addAndCenterSubview(subView: subView, subViewHeight: 126, horizontalInset: 20)
+        let waveFormViewController = WaveformViewController()
+        waveFormViewController.mediaType = .frequency(440)
+        waveFormViewController.titleText = String(440) + " Hz"
+        waveFormViewController.currentFunction = SineFunctionGenerator.generateSineForPlotting(withFrequency: 440)
+        self.view.addAndCenterSubview(subView: waveFormViewController.view, subViewHeight: Constants.Table.RowHeight, horizontalInset: 20)
     }
 }
