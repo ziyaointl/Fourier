@@ -7,3 +7,16 @@
  
  Click on the play button to hear how it sounds!
  */
+//#-hidden-code
+import PlaygroundSupport
+import UIKit
+
+let mainView = UIView()
+let waveFormViewController = WaveformViewController()
+waveFormViewController.mediaType = .frequency(440)
+waveFormViewController.titleText = String(440) + " Hz"
+waveFormViewController.currentFunction = SineFunctionGenerator.generateSineForPlotting(withFrequency: 440)
+mainView.addAndCenterSubview(subView: waveFormViewController.view, subViewHeight: Constants.Table.RowHeight, horizontalInset: 20)
+mainView.backgroundColor = Constants.Colors.Background
+PlaygroundPage.current.liveView = mainView
+//#-end-hidden-code

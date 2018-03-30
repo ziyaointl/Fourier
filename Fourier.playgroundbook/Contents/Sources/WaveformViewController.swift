@@ -45,13 +45,19 @@ public class WaveformViewController: UIViewController, WaveformViewDelegate {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
+        // Load font
+        if !UIFont.familyNames.contains("Ionicons") {
+            let url = Bundle.main.url(forResource: "ionicons", withExtension: "ttf") as! CFURL
+            CTFontManagerRegisterFontsForURL(url, CTFontManagerScope.process, nil)
+        }
+        
         plotView = mainView.plotView
         plotView.includeNegativeYAxis = true
         plotView.contentMode = .redraw
         plotView.currentFunction = currentFunction
         
         playButton = mainView.playButton
-//        playButton.titleLabel?.font = UIFont(name: "Ionicons", size: 50)!
+        playButton.titleLabel?.font = UIFont(name: "Ionicons", size: 50)!
         playButton.layer.borderColor = #colorLiteral(red: 0.3627791107, green: 0.3627791107, blue: 0.3627791107, alpha: 1)
         playButton.layer.cornerRadius = playButton.bounds.width / 2
         playButton.layer.borderWidth = 2.0
@@ -118,3 +124,4 @@ public enum MediaType {
     case frequency(Int)
     case file(String)
 }
+
