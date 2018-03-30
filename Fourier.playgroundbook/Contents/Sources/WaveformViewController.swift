@@ -51,7 +51,7 @@ public class WaveformViewController: UIViewController, WaveformViewDelegate {
         plotView.currentFunction = currentFunction
         
         playButton = mainView.playButton
-        playButton.titleLabel?.font = UIFont(name: "Ionicons", size: 50)!
+//        playButton.titleLabel?.font = UIFont(name: "Ionicons", size: 50)!
         playButton.layer.borderColor = #colorLiteral(red: 0.3627791107, green: 0.3627791107, blue: 0.3627791107, alpha: 1)
         playButton.layer.cornerRadius = playButton.bounds.width / 2
         playButton.layer.borderWidth = 2.0
