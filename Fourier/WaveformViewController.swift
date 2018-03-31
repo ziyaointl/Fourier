@@ -58,13 +58,13 @@ public class WaveformViewController: UIViewController, WaveformViewDelegate {
         
         playButton = mainView.playButton
         playButton.titleLabel?.font = UIFont(name: "Ionicons", size: 50)!
-        playButton.layer.borderColor = #colorLiteral(red: 0.3627791107, green: 0.3627791107, blue: 0.3627791107, alpha: 1)
+        playButton.layer.borderColor = Constants.Colors.DarkGray.cgColor
         playButton.layer.cornerRadius = playButton.bounds.width / 2
         playButton.layer.borderWidth = 2.0
         
         titleLabel = mainView.title
         titleLabel.text = titleText
-        titleLabel.textColor = #colorLiteral(red: 0.3627791107, green: 0.3627791107, blue: 0.3627791107, alpha: 1)
+        titleLabel.textColor = Constants.Colors.DarkGray
     }
     
     override public func viewWillAppear(_ animated: Bool) {
