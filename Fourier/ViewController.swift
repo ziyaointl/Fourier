@@ -115,7 +115,7 @@ class ViewController: UIViewController, AudioManagerDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if let url = Bundle.main.url(forResource: "Julie_Maxwells_Starry_Sky", withExtension: "m4a") {
-            audioManager.play(fileWithURL: url)
+            audioManager.play(fileWithURL: url, completionHandler: nil)
         }
     }
     
