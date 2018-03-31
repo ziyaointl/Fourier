@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		9811418E206F07DB00946250 /* Piano A4.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9811418D206F07DB00946250 /* Piano A4.m4a */; };
 		98114190206F2AFF00946250 /* PianoNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9811418F206F2AFF00946250 /* PianoNoteViewController.swift */; };
+		98114192206F2F7900946250 /* WaveFormAndFFTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98114191206F2F7900946250 /* WaveFormAndFFTView.swift */; };
+		98114194206F2F8D00946250 /* WaveFormAndFFTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98114193206F2F8D00946250 /* WaveFormAndFFTViewController.swift */; };
+		98114196206F2F9B00946250 /* WaveFormAndFFTView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98114195206F2F9B00946250 /* WaveFormAndFFTView.xib */; };
 		9816E946205C2C1500B757C5 /* SceneKit Scene.scn in Resources */ = {isa = PBXBuildFile; fileRef = 9816E945205C2C1500B757C5 /* SceneKit Scene.scn */; };
 		9816E948205D152500B757C5 /* SpectrumColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816E947205D152500B757C5 /* SpectrumColumn.swift */; };
 		9816E94A205D199C00B757C5 /* SpectrumGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816E949205D199C00B757C5 /* SpectrumGraph.swift */; };
@@ -24,7 +27,7 @@
 		989729F2206C95BE007797F8 /* WaveformViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989729F1206C95BE007797F8 /* WaveformViewController.swift */; };
 		98AF585B206D036C00E5C898 /* WaveformTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AF5859206D036C00E5C898 /* WaveformTableViewController.swift */; };
 		98AF585E206D099900E5C898 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AF585D206D099900E5C898 /* UIViewExtensions.swift */; };
-		98AF5860206D201000E5C898 /* SineFunctionGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AF585F206D201000E5C898 /* SineFunctionGenerator.swift */; };
+		98AF5860206D201000E5C898 /* FunctionGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AF585F206D201000E5C898 /* FunctionGenerator.swift */; };
 		98B6DA15205A53E4009B54E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B6DA14205A53E4009B54E7 /* AppDelegate.swift */; };
 		98B6DA17205A53E5009B54E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B6DA16205A53E5009B54E7 /* ViewController.swift */; };
 		98B6DA1A205A53E5009B54E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98B6DA18205A53E5009B54E7 /* Main.storyboard */; };
@@ -45,6 +48,9 @@
 /* Begin PBXFileReference section */
 		9811418D206F07DB00946250 /* Piano A4.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Piano A4.m4a"; path = "../../../Downloads/Piano A4.m4a"; sourceTree = "<group>"; };
 		9811418F206F2AFF00946250 /* PianoNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PianoNoteViewController.swift; sourceTree = "<group>"; };
+		98114191206F2F7900946250 /* WaveFormAndFFTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveFormAndFFTView.swift; sourceTree = "<group>"; };
+		98114193206F2F8D00946250 /* WaveFormAndFFTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveFormAndFFTViewController.swift; sourceTree = "<group>"; };
+		98114195206F2F9B00946250 /* WaveFormAndFFTView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WaveFormAndFFTView.xib; sourceTree = "<group>"; };
 		9816E945205C2C1500B757C5 /* SceneKit Scene.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "SceneKit Scene.scn"; sourceTree = "<group>"; };
 		9816E947205D152500B757C5 /* SpectrumColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectrumColumn.swift; sourceTree = "<group>"; };
 		9816E949205D199C00B757C5 /* SpectrumGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectrumGraph.swift; sourceTree = "<group>"; };
@@ -60,7 +66,7 @@
 		989729F1206C95BE007797F8 /* WaveformViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveformViewController.swift; sourceTree = "<group>"; };
 		98AF5859206D036C00E5C898 /* WaveformTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveformTableViewController.swift; sourceTree = "<group>"; };
 		98AF585D206D099900E5C898 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
-		98AF585F206D201000E5C898 /* SineFunctionGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SineFunctionGenerator.swift; sourceTree = "<group>"; };
+		98AF585F206D201000E5C898 /* FunctionGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionGenerator.swift; sourceTree = "<group>"; };
 		98B6DA11205A53E4009B54E7 /* Fourier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fourier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98B6DA14205A53E4009B54E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98B6DA16205A53E5009B54E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -110,9 +116,12 @@
 		98B6DA13205A53E4009B54E7 /* Fourier */ = {
 			isa = PBXGroup;
 			children = (
-				98AF585F206D201000E5C898 /* SineFunctionGenerator.swift */,
+				98AF585F206D201000E5C898 /* FunctionGenerator.swift */,
 				9811418F206F2AFF00946250 /* PianoNoteViewController.swift */,
 				98187D3E206D8521006DC143 /* Constants.swift */,
+				98114191206F2F7900946250 /* WaveFormAndFFTView.swift */,
+				98114193206F2F8D00946250 /* WaveFormAndFFTViewController.swift */,
+				98114195206F2F9B00946250 /* WaveFormAndFFTView.xib */,
 				98B6DA14205A53E4009B54E7 /* AppDelegate.swift */,
 				98B6DA16205A53E5009B54E7 /* ViewController.swift */,
 				98DFA51F206890E00072C7BA /* PlotView.swift */,
@@ -212,6 +221,7 @@
 				98B6DA1F205A53E5009B54E7 /* LaunchScreen.storyboard in Resources */,
 				98D5A9FF205A73B6003BDA7F /* 440and173.m4a in Resources */,
 				98D5AA01205AA30A003BDA7F /* MDK - Fingerbang.mp3 in Resources */,
+				98114196206F2F9B00946250 /* WaveFormAndFFTView.xib in Resources */,
 				98B6DA1C205A53E5009B54E7 /* Assets.xcassets in Resources */,
 				9834EDEF2063CFB500087000 /* ionicons.ttf in Resources */,
 				98B6DA1A205A53E5009B54E7 /* Main.storyboard in Resources */,
@@ -230,7 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9816E94A205D199C00B757C5 /* SpectrumGraph.swift in Sources */,
-				98AF5860206D201000E5C898 /* SineFunctionGenerator.swift in Sources */,
+				98AF5860206D201000E5C898 /* FunctionGenerator.swift in Sources */,
 				9816E9522063564300B757C5 /* CustomCameraController.swift in Sources */,
 				98B6DA17205A53E5009B54E7 /* ViewController.swift in Sources */,
 				98B6DA2D205A63F2009B54E7 /* SpectrumView.swift in Sources */,
@@ -239,8 +249,10 @@
 				98AF585B206D036C00E5C898 /* WaveformTableViewController.swift in Sources */,
 				98D5AA05205B53C3003BDA7F /* AudioManager.swift in Sources */,
 				9816E94C205D200200B757C5 /* SpectrumGraph3D.swift in Sources */,
+				98114194206F2F8D00946250 /* WaveFormAndFFTViewController.swift in Sources */,
 				98DFA520206890E00072C7BA /* PlotView.swift in Sources */,
 				98DFA5242069E81A0072C7BA /* AVPureTonePlayerNode.swift in Sources */,
+				98114192206F2F7900946250 /* WaveFormAndFFTView.swift in Sources */,
 				9816E94E205D240500B757C5 /* Materials.swift in Sources */,
 				98187D3F206D8521006DC143 /* Constants.swift in Sources */,
 				9816E948205D152500B757C5 /* SpectrumColumn.swift in Sources */,
