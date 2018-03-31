@@ -8,21 +8,21 @@
 
 import UIKit
 
-class ToneComparisonViewController: UIViewController {
-    var stackView: UIStackView!
-    var scrollView: UIScrollView!
+public class ToneComparisonViewController: UIViewController {
+    public var stackView: UIStackView!
+    public var scrollView: UIScrollView!
     
-    override func loadView() {
+    override public func loadView() {
         super.loadView()
     }
     
-    override func viewDidLayoutSubviews() {
+    override public func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         stackView.frame.size.width = scrollView.frame.width
         scrollView.contentSize = stackView.bounds.size
     }
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         scrollView = UIScrollView()
         self.view.fillSelfWith(subView: scrollView, inset: 30)

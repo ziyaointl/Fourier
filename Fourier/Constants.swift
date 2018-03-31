@@ -25,6 +25,7 @@ public struct Constants {
     
     public struct Resources {
         public static let PianoNoteURL = Bundle.main.url(forResource: "Piano A4", withExtension: ".m4a")!
+        public static let EquationImage = #imageLiteral(resourceName: "equation.png")
     }
     
     public struct StringLiterals {
