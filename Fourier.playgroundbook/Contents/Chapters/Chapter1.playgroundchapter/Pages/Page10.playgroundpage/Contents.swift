@@ -7,3 +7,7 @@
  
  Thanks to Joseph Fourier for making all of this possible.
  */
+
+import PlaygroundSupport
+let toneComparisonViewController = ToneComparisonViewController()
+PlaygroundPage.current.liveView = toneComparisonViewController

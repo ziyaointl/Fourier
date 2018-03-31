@@ -24,14 +24,18 @@ public extension UIView {
     }
     
     public func fillSelfWith(subView: UIView, inset: CGFloat) {
+        fillSefWith(subView: subView, insetLeft: inset, insetRight: inset, insetTop: inset, insetBottom: inset)
+    }
+    
+    public func fillSefWith(subView: UIView, insetLeft: CGFloat, insetRight: CGFloat, insetTop: CGFloat, insetBottom: CGFloat) {
         subView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(subView)
         
         NSLayoutConstraint.activate([
-            subView.topAnchor.constraint(equalTo: self.topAnchor, constant: inset),
-            subView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -inset),
-            subView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: inset),
-            subView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -inset)
+            subView.topAnchor.constraint(equalTo: self.topAnchor, constant: insetTop),
+            subView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -insetBottom),
+            subView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: insetLeft),
+            subView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -insetRight)
             ])
     }
     

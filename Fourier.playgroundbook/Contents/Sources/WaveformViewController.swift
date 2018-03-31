@@ -49,6 +49,11 @@ public class WaveformViewController: UIViewController, WaveformViewDelegate {
         mainView.delegate = self
     }
     
+    override public func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        playButton.layer.cornerRadius = playButton.bounds.width / 2
+    }
+    
     override public func viewDidLoad() {
         super.viewDidLoad()
         // Load font
@@ -65,7 +70,6 @@ public class WaveformViewController: UIViewController, WaveformViewDelegate {
         playButton = mainView.playButton
         playButton.titleLabel?.font = UIFont(name: "Ionicons", size: 50)!
         playButton.layer.borderColor = Constants.Colors.DarkGray.cgColor
-        playButton.layer.cornerRadius = playButton.bounds.width / 2
         playButton.layer.borderWidth = 2.0
         
         titleLabel = mainView.title

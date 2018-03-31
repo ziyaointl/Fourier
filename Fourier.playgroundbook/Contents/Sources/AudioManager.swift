@@ -47,7 +47,7 @@ public class AudioManager {
             }
             scheduleBuffer()
             
-            tryToInstallTap()
+            tryToInstallTap(onNode: audioFilePlayerNode)
             
             // Start Playing
             try? AudioManager.audioEngine.start()
@@ -62,18 +62,17 @@ public class AudioManager {
     
     public func play(pureToneWithFrequency frequency: Int) {
         pureTonePlayerNode.frequency = Double(frequency)
-        tryToInstallTap()
+        tryToInstallTap(onNode: pureTonePlayerNode)
         try? AudioManager.audioEngine.start()
         pureTonePlayerNode.play()
     }
     
-    private func tryToInstallTap() {
+    private func tryToInstallTap(onNode node: AVAudioNode) {
         // Install tap
         // If true, a delegate is required to accept the FFT result
         if installTap {
             let bufferSize: UInt32 = 4000
-            let mixerNode = AudioManager.audioEngine.mainMixerNode
-            mixerNode.installTap(onBus: 0, bufferSize: bufferSize, format: mixerNode.outputFormat(forBus: 0)) { [weak self] (buffer, time) in
+            node.installTap(onBus: 0, bufferSize: bufferSize, format: node.outputFormat(forBus: 0)) { [weak self] (buffer, time) in
                 buffer.frameLength = bufferSize
                 self?.fftHelper.fourierTransform(buffer: buffer, audioManager: self!)
             }

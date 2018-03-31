@@ -3,6 +3,7 @@
  
  Notice the single spike shown in the output. This indicates that the original signal is made up of a single pure wave with a frequency of 440Hz.
  */
+//#-hidden-code
 import PlaygroundSupport
 import UIKit
 
@@ -12,3 +13,4 @@ viewController.mediaType = .frequency(440)
 mainView.addAndCenterSubview(subView: viewController.view, subViewHeight: Constants.ViewHeight.WaveFormAndFFTView, horizontalInset: 30)
 mainView.backgroundColor = Constants.Colors.LightGray
 PlaygroundPage.current.liveView = mainView
+//#-end-hidden-code

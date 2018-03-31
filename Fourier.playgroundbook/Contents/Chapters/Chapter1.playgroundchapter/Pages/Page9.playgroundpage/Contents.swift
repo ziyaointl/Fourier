@@ -5,7 +5,7 @@
  
  (Typical Fourier transform plots use a logarithmic scale, but to show the equidistant relationship between component frequencies, a linear scale is being used here)
  */
-
+//#-hidden-code
 import PlaygroundSupport
 import UIKit
 
@@ -15,3 +15,4 @@ viewController.mediaType = .file(Constants.Resources.PianoNoteURL)
 mainView.addAndCenterSubview(subView: viewController.view, subViewHeight: Constants.ViewHeight.WaveFormAndFFTView, horizontalInset: 30)
 mainView.backgroundColor = Constants.Colors.LightGray
 PlaygroundPage.current.liveView = mainView
+//#-end-hidden-code

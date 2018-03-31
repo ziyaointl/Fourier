@@ -7,3 +7,14 @@
  
  Here's the equation of Fourier transform. For what it does, it is surprisingly short and elegant. You can marvel at its magnificence, but feel free to skip it once you've done so.
  */
+//#-hidden-code
+import PlaygroundSupport
+import UIKit
+
+let mainView = UIView()
+mainView.backgroundColor = Constants.Colors.LightGray
+let imageView = UIImageView(image: Constants.Resources.EquationImage)
+imageView.contentMode = .scaleAspectFit
+mainView.fillSelfWith(subView: imageView, inset: 50)
+PlaygroundPage.current.liveView = mainView
+//#-end-hidden-code
