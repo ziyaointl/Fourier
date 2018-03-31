@@ -25,24 +25,27 @@ public class AudioManager {
         AudioManager.audioEngine.connect(audioFilePlayerNode, to: AudioManager.audioEngine.mainMixerNode, format: audioFilePlayerNode.outputFormat(forBus: 0))
     }
     
-    public func play(fileWithURL url: URL, loop: Bool) {
+    public func getBufferOf(fileWithURL url: URL) -> AVAudioPCMBuffer {
+        if let inputFile = try? AVAudioFile(forReading: url) {
+            return AVAudioPCMBuffer(pcmFormat: inputFile.processingFormat, frameCapacity: AVAudioFrameCount(inputFile.length))!
+        }
+        return AVAudioPCMBuffer()
+    }
+    
+    public func play(fileWithURL url: URL){
         if let inputFile = try? AVAudioFile(forReading: url) {
             let buffer = AVAudioPCMBuffer(pcmFormat: inputFile.processingFormat, frameCapacity: AVAudioFrameCount(inputFile.length))!
             try? inputFile.read(into: buffer)
-            if loop {
-                 audioFilePlayerNode.scheduleBuffer(buffer, at: nil, options: .loops, completionHandler: nil)
-            } else {
-                 audioFilePlayerNode.scheduleBuffer(buffer, at: nil, options: [], completionHandler: nil)
-            }
+            audioFilePlayerNode.scheduleBuffer(buffer, at: nil, options: .loops, completionHandler: nil)
             
             // Install tap
             // If true, a delegate is required to accept the FFT result
             if installTap {
                 let bufferSize: UInt32 = 4000
                 let mixerNode = AudioManager.audioEngine.mainMixerNode
-                mixerNode.installTap(onBus: 0, bufferSize: bufferSize, format: mixerNode.outputFormat(forBus: 0)) { (buffer, time) in
+                mixerNode.installTap(onBus: 0, bufferSize: bufferSize, format: mixerNode.outputFormat(forBus: 0)) { [weak self] (buffer, time) in
                     buffer.frameLength = bufferSize
-                    self.fftHelper.fourierTransform(buffer: buffer, audioManager: self) // possible memory cycle
+                    self?.fftHelper.fourierTransform(buffer: buffer, audioManager: self!)
                 }
             }
             
@@ -52,13 +55,14 @@ public class AudioManager {
         }
     }
     
+    public func pause() {
+        pureTonePlayerNode.pause()
+        audioFilePlayerNode.pause()
+    }
+    
     public func play(pureToneWithFrequency frequency: Int) {
         pureTonePlayerNode.frequency = Double(frequency)
         try? AudioManager.audioEngine.start()
         pureTonePlayerNode.play()
-    }
-    
-    public func pause(pureToneWithFrequency frequency: Int) {
-        pureTonePlayerNode.pause()
     }
 }
