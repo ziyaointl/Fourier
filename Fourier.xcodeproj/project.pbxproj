@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9811418E206F07DB00946250 /* Piano A4.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9811418D206F07DB00946250 /* Piano A4.m4a */; };
+		98114190206F2AFF00946250 /* PianoNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9811418F206F2AFF00946250 /* PianoNoteViewController.swift */; };
 		9816E946205C2C1500B757C5 /* SceneKit Scene.scn in Resources */ = {isa = PBXBuildFile; fileRef = 9816E945205C2C1500B757C5 /* SceneKit Scene.scn */; };
 		9816E948205D152500B757C5 /* SpectrumColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816E947205D152500B757C5 /* SpectrumColumn.swift */; };
 		9816E94A205D199C00B757C5 /* SpectrumGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816E949205D199C00B757C5 /* SpectrumGraph.swift */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		9811418D206F07DB00946250 /* Piano A4.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Piano A4.m4a"; path = "../../../Downloads/Piano A4.m4a"; sourceTree = "<group>"; };
+		9811418F206F2AFF00946250 /* PianoNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PianoNoteViewController.swift; sourceTree = "<group>"; };
 		9816E945205C2C1500B757C5 /* SceneKit Scene.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "SceneKit Scene.scn"; sourceTree = "<group>"; };
 		9816E947205D152500B757C5 /* SpectrumColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectrumColumn.swift; sourceTree = "<group>"; };
 		9816E949205D199C00B757C5 /* SpectrumGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectrumGraph.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				98AF585F206D201000E5C898 /* SineFunctionGenerator.swift */,
+				9811418F206F2AFF00946250 /* PianoNoteViewController.swift */,
 				98187D3E206D8521006DC143 /* Constants.swift */,
 				98B6DA14205A53E4009B54E7 /* AppDelegate.swift */,
 				98B6DA16205A53E5009B54E7 /* ViewController.swift */,
@@ -242,6 +245,7 @@
 				98187D3F206D8521006DC143 /* Constants.swift in Sources */,
 				9816E948205D152500B757C5 /* SpectrumColumn.swift in Sources */,
 				9816E9502060812200B757C5 /* FFTHelper.swift in Sources */,
+				98114190206F2AFF00946250 /* PianoNoteViewController.swift in Sources */,
 				989729F2206C95BE007797F8 /* WaveformViewController.swift in Sources */,
 				98B6DA15205A53E4009B54E7 /* AppDelegate.swift in Sources */,
 				98AF585E206D099900E5C898 /* UIViewExtensions.swift in Sources */,
