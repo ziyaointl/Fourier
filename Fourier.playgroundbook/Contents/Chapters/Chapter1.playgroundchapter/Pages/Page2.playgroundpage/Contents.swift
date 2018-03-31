@@ -11,11 +11,11 @@ import UIKit
 
 let mainView = UIView()
 let plotView = PlotView()
-mainView.backgroundColor = Constants.Colors.Background
-plotView.backgroundColor = Constants.Colors.Background
+mainView.backgroundColor = Constants.Colors.LightGray
+plotView.backgroundColor = Constants.Colors.LightGray
 plotView.includeNegativeYAxis = true
 plotView.contentMode = .redraw
-plotView.currentFunction = SineFunctionGenerator.generateSineForPlotting(withFrequency: 440)
+plotView.currentFunction = FunctionGenerator.generateSineForPlotting(withFrequency: 440)
 mainView.addAndCenterSubview(subView: plotView, subViewHeight: Constants.Table.RowHeight, horizontalInset: 20)
 PlaygroundPage.current.liveView = mainView
 //#-end-hidden-code

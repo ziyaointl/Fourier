@@ -2,4 +2,70 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fourier/WaveFormAndFFTViewController.swift"
+            timestampString = "544179686.110178"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "didFourierTransform(_:output:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in Fourier.WaveFormAndFFTViewController.didFourierTransform(Fourier.AudioManager, output: Swift.Array&lt;Swift.Float&gt;) -&gt; ()"
+                  moduleName = "Fourier"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Ziyao/Github/Fourier/Fourier/WaveFormAndFFTViewController.swift"
+                  timestampString = "544163510.423944"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Double) -&gt; Swift.Double in closure #1 () -&gt; () in Fourier.WaveFormAndFFTViewController.didFourierTransform(Fourier.AudioManager, output: Swift.Array&lt;Swift.Float&gt;) -&gt; ()"
+                  moduleName = "Fourier"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Ziyao/Github/Fourier/Fourier/WaveFormAndFFTViewController.swift"
+                  timestampString = "544163510.427048"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "26">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fourier/AudioManager.swift"
+            timestampString = "544179686.123979"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "tryToInstallTap()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

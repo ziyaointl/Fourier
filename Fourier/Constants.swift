@@ -10,6 +10,10 @@ import Foundation
 import UIKit
 
 public struct Constants {
+    public struct ViewHeight {
+        public static let WaveFormAndFFTView: CGFloat = 280.0
+    }
+    
     public struct Table {
         public static let RowHeight: CGFloat = 126.0
     }

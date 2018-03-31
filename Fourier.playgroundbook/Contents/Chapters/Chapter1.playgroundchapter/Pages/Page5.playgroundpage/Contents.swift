@@ -5,6 +5,7 @@
  
  What appears in nature are called complex tones, tones that are composed of pure tones of different frequencies and amplitudes.
  */
+//#-hidden-code
 import PlaygroundSupport
 
 let waveformTableViewController = WaveformTableViewController()

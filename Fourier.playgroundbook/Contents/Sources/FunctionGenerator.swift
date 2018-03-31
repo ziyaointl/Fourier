@@ -1,5 +1,5 @@
 //
-//  SineFunctionGenerator.swift
+//  FunctionGenerator.swift
 //  Fourier
 //
 //  Created by Blocry Glass on 3/29/18.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class SineFunctionGenerator {
+public class FunctionGenerator {
     private static let yMultiplier = 30
     private static let xMultiplier = 0.05
     private static let baseFrequency = 440
@@ -19,5 +19,16 @@ public class SineFunctionGenerator {
             return sin(x) * Double(yMultiplier)
         }
         return generatedFunction
+    }
+    
+    public static func generatePianoA4ForPlotting() -> ((Double) -> Double) {
+        let buffer = AudioManager.getBufferOf(fileWithURL: Constants.Resources.PianoNoteURL)
+        let currentFunc: (Double) -> Double = { x in
+            if UInt32(x) > buffer.frameCapacity {
+                return 0.0
+            }
+            return Double(buffer.floatChannelData![0][Int(x)] * 200)
+        }
+        return currentFunc
     }
 }

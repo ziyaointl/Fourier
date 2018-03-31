@@ -9,7 +9,7 @@
 import UIKit
 
 public class WaveformViewController: UIViewController, WaveformViewDelegate {
-    struct Icon {
+    private struct Icon {
         static let play = ""
         static let pause = ""
     }
@@ -22,11 +22,17 @@ public class WaveformViewController: UIViewController, WaveformViewDelegate {
             }
         }
     }
-    public var currentFunction: (Double) -> Double = {x in return x} {
+    public var currentFunction: (Double) -> Double = {x in return 0.0} {
         didSet {
             if let plot = plotView {
                 plot.currentFunction = currentFunction
             }
+        }
+    }
+    public var fftResultReceiver: AudioManagerDelegate! {
+        didSet {
+            audioManager.installTap = true
+            audioManager.delegate = fftResultReceiver
         }
     }
     private var mainView: WaveformView!
@@ -58,13 +64,13 @@ public class WaveformViewController: UIViewController, WaveformViewDelegate {
         
         playButton = mainView.playButton
         playButton.titleLabel?.font = UIFont(name: "Ionicons", size: 50)!
-        playButton.layer.borderColor = #colorLiteral(red: 0.3627791107, green: 0.3627791107, blue: 0.3627791107, alpha: 1)
+        playButton.layer.borderColor = Constants.Colors.DarkGray.cgColor
         playButton.layer.cornerRadius = playButton.bounds.width / 2
         playButton.layer.borderWidth = 2.0
         
         titleLabel = mainView.title
         titleLabel.text = titleText
-        titleLabel.textColor = #colorLiteral(red: 0.3627791107, green: 0.3627791107, blue: 0.3627791107, alpha: 1)
+        titleLabel.textColor = Constants.Colors.DarkGray
     }
     
     override public func viewWillAppear(_ animated: Bool) {
@@ -106,22 +112,21 @@ public class WaveformViewController: UIViewController, WaveformViewDelegate {
         case let .frequency(frequency):
             audioManager.play(pureToneWithFrequency: frequency)
         case let .file(url):
-            break
+            audioManager.play(fileWithURL: url, completionHandler: { [weak self] in
+                DispatchQueue.main.async {
+                    self?.plotView.offset = 0
+                }
+            })
         }
     }
     
     private func pauseAudio() {
-        switch mediaType {
-        case let .frequency(frequency):
-            audioManager.pause(pureToneWithFrequency: frequency)
-        case let .file(url):
-            break
-        }
+        audioManager.pause()
     }
 }
 
 public enum MediaType {
     case frequency(Int)
-    case file(String)
+    case file(URL)
 }
 

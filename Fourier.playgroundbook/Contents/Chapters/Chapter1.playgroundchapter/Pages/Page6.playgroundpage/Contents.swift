@@ -9,3 +9,13 @@
  
  For this, we will need Fourier transform.
  */
+//#-hidden-code
+import PlaygroundSupport
+import UIKit
+
+let mainView = UIView()
+let pianoNoteViewController = PianoNoteViewController()
+mainView.addAndCenterSubview(subView: pianoNoteViewController.view, subViewHeight: Constants.Table.RowHeight, horizontalInset: 30)
+mainView.backgroundColor = Constants.Colors.LightGray
+PlaygroundPage.current.liveView = mainView
+//#-end-hidden-code

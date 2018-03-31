@@ -15,8 +15,8 @@ let mainView = UIView()
 let waveFormViewController = WaveformViewController()
 waveFormViewController.mediaType = .frequency(440)
 waveFormViewController.titleText = String(440) + " Hz"
-waveFormViewController.currentFunction = SineFunctionGenerator.generateSineForPlotting(withFrequency: 440)
+waveFormViewController.currentFunction = FunctionGenerator.generateSineForPlotting(withFrequency: 440)
 mainView.addAndCenterSubview(subView: waveFormViewController.view, subViewHeight: Constants.Table.RowHeight, horizontalInset: 20)
-mainView.backgroundColor = Constants.Colors.Background
+mainView.backgroundColor = Constants.Colors.LightGray
 PlaygroundPage.current.liveView = mainView
 //#-end-hidden-code
