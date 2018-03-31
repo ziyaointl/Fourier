@@ -32,11 +32,18 @@ public class AudioManager {
         return AVAudioPCMBuffer()
     }
     
-    public func play(fileWithURL url: URL){
+    public func play(fileWithURL url: URL, completionHandler: AVAudioNodeCompletionHandler?) {
         if let inputFile = try? AVAudioFile(forReading: url) {
             let buffer = AVAudioPCMBuffer(pcmFormat: inputFile.processingFormat, frameCapacity: AVAudioFrameCount(inputFile.length))!
             try? inputFile.read(into: buffer)
-            audioFilePlayerNode.scheduleBuffer(buffer, at: nil, options: .loops, completionHandler: nil)
+            
+            func scheduleBuffer() {
+                audioFilePlayerNode.scheduleBuffer(buffer, at: nil, options: [], completionHandler: {
+                    completionHandler?()
+                    scheduleBuffer()
+                })
+            }
+            scheduleBuffer()
             
             // Install tap
             // If true, a delegate is required to accept the FFT result
