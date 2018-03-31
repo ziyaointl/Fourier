@@ -25,9 +25,11 @@ public class AudioManager {
         AudioManager.audioEngine.connect(audioFilePlayerNode, to: AudioManager.audioEngine.mainMixerNode, format: audioFilePlayerNode.outputFormat(forBus: 0))
     }
     
-    public func getBufferOf(fileWithURL url: URL) -> AVAudioPCMBuffer {
+    public static func getBufferOf(fileWithURL url: URL) -> AVAudioPCMBuffer {
         if let inputFile = try? AVAudioFile(forReading: url) {
-            return AVAudioPCMBuffer(pcmFormat: inputFile.processingFormat, frameCapacity: AVAudioFrameCount(inputFile.length))!
+            let buffer = AVAudioPCMBuffer(pcmFormat: inputFile.processingFormat, frameCapacity: AVAudioFrameCount(inputFile.length))!
+            try? inputFile.read(into: buffer)
+            return buffer
         }
         return AVAudioPCMBuffer()
     }
