@@ -106,7 +106,11 @@ public class WaveformViewController: UIViewController, WaveformViewDelegate {
         case let .frequency(frequency):
             audioManager.play(pureToneWithFrequency: frequency)
         case let .file(url):
-            audioManager.play(fileWithURL: url)
+            audioManager.play(fileWithURL: url, completionHandler: { [weak self] in
+                DispatchQueue.main.async {
+                    self?.plotView.offset = 0
+                }
+            })
         }
     }
     
