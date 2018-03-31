@@ -11,13 +11,9 @@ import UIKit
 class TestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        let waveformTableViewController = WaveformTableViewController()
-        view.addSubview(waveformTableViewController.view)
-        func createWave(withFrequency frequency: Int) {
-            waveformTableViewController.addWaveForm(withFrequency: frequency)
-        }
-        createWave(withFrequency: 440)
-        createWave(withFrequency: 880)
-        createWave(withFrequency: 1320)
+        let waveFormViewController = WaveformViewController()
+        let fileURL = Bundle.main.url(forResource: "Piano A4", withExtension: ".m4a")!
+        waveFormViewController.mediaType = .file(fileURL)
+        self.view.addAndCenterSubview(subView: waveFormViewController.view, subViewHeight: Constants.Table.RowHeight, horizontalInset: 30)
     }
 }

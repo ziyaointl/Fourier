@@ -138,10 +138,10 @@
             </objects>
             <point key="canvasLocation" x="760.546875" y="50"/>
         </scene>
-        <!--Waveform Table View Controller-->
+        <!--Test View Controller-->
         <scene sceneID="mi8-UL-XKM">
             <objects>
-                <viewController id="Eau-S8-5dL" customClass="WaveformTableViewController" customModule="Fourier" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Eau-S8-5dL" customClass="TestViewController" customModule="Fourier" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rDH-PH-0SP">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

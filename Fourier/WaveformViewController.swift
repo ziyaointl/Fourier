@@ -9,7 +9,7 @@
 import UIKit
 
 public class WaveformViewController: UIViewController, WaveformViewDelegate {
-    struct Icon {
+    private struct Icon {
         static let play = ""
         static let pause = ""
     }
@@ -106,22 +106,17 @@ public class WaveformViewController: UIViewController, WaveformViewDelegate {
         case let .frequency(frequency):
             audioManager.play(pureToneWithFrequency: frequency)
         case let .file(url):
-            break
+            audioManager.play(fileWithURL: url)
         }
     }
     
     private func pauseAudio() {
-        switch mediaType {
-        case let .frequency(frequency):
-            audioManager.pause(pureToneWithFrequency: frequency)
-        case let .file(url):
-            break
-        }
+        audioManager.pause()
     }
 }
 
 public enum MediaType {
     case frequency(Int)
-    case file(String)
+    case file(URL)
 }
 
