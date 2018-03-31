@@ -22,11 +22,17 @@ public class WaveformViewController: UIViewController, WaveformViewDelegate {
             }
         }
     }
-    public var currentFunction: (Double) -> Double = {x in return x} {
+    public var currentFunction: (Double) -> Double = {x in return 0.0} {
         didSet {
             if let plot = plotView {
                 plot.currentFunction = currentFunction
             }
+        }
+    }
+    public var fftResultReceiver: AudioManagerDelegate! {
+        didSet {
+            audioManager.installTap = true
+            audioManager.delegate = fftResultReceiver
         }
     }
     private var mainView: WaveformView!

@@ -63,7 +63,7 @@ public class PlotView: UIView {
 public class PlotLayer: CALayer {
     @NSManaged var offset: CGFloat
     public var includeNegativeYAxis = false
-    public var currentFunction: ((Double) -> Double) = {x in return x}
+    public var currentFunction: ((Double) -> Double) = {x in return 0.0}
     
     override init() {
         super.init()

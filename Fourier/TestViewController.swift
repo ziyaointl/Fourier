@@ -11,7 +11,7 @@ import UIKit
 class TestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        let pianoNoteViewController = PianoNoteViewController()
-        self.view.addAndCenterSubview(subView: pianoNoteViewController.view, subViewHeight: Constants.Table.RowHeight, horizontalInset: 30)
+        let viewController = WaveFormAndFFTViewController()
+        self.view.addAndCenterSubview(subView: viewController.view, subViewHeight: Constants.Table.RowHeight * 2 + 30, horizontalInset: 30)
     }
 }

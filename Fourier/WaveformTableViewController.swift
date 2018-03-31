@@ -33,8 +33,8 @@ public class WaveformTableViewController: UIViewController, UITableViewDelegate,
         tableView.dataSource = self
         tableView.delegate = self
         tableView.allowsSelection = false
-        tableView.backgroundColor = Constants.Colors.Background
-        self.view.backgroundColor = Constants.Colors.Background
+        tableView.backgroundColor = Constants.Colors.LightGray
+        self.view.backgroundColor = Constants.Colors.LightGray
         view.fillSelfWith(subView: tableView, inset: 20)
     }
     
@@ -42,7 +42,7 @@ public class WaveformTableViewController: UIViewController, UITableViewDelegate,
         let waveFormViewController = WaveformViewController()
         waveFormViewController.mediaType = .frequency(frequency)
         waveFormViewController.titleText = String(frequency) + " Hz"
-        waveFormViewController.currentFunction = SineFunctionGenerator.generateSineForPlotting(withFrequency: frequency)
+        waveFormViewController.currentFunction = FunctionGenerator.generateSineForPlotting(withFrequency: frequency)
         waveFormViewControllers.append(waveFormViewController)
     }
 }
