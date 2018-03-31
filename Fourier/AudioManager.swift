@@ -11,7 +11,7 @@ import AVFoundation
 import Accelerate
 
 public class AudioManager {
-    private let audioEngine = AVAudioEngine()
+    private static let audioEngine = AVAudioEngine()
     private let fftHelper = FFTHelper()
     private let pureTonePlayerNode = AVPureTonePlayerNode()
     private let audioFilePlayerNode = AVAudioPlayerNode()
@@ -19,10 +19,10 @@ public class AudioManager {
     public var installTap = false
     
     public init() {
-        audioEngine.attach(pureTonePlayerNode)
-        audioEngine.connect(pureTonePlayerNode, to: audioEngine.mainMixerNode, format: pureTonePlayerNode.format)
-        audioEngine.attach(audioFilePlayerNode)
-        audioEngine.connect(audioFilePlayerNode, to: audioEngine.mainMixerNode, format: audioFilePlayerNode.outputFormat(forBus: 0))
+        AudioManager.audioEngine.attach(pureTonePlayerNode)
+        AudioManager.audioEngine.connect(pureTonePlayerNode, to: AudioManager.audioEngine.mainMixerNode, format: pureTonePlayerNode.format)
+        AudioManager.audioEngine.attach(audioFilePlayerNode)
+        AudioManager.audioEngine.connect(audioFilePlayerNode, to: AudioManager.audioEngine.mainMixerNode, format: audioFilePlayerNode.outputFormat(forBus: 0))
     }
     
     public static func getBufferOf(fileWithURL url: URL) -> AVAudioPCMBuffer {
@@ -47,10 +47,10 @@ public class AudioManager {
             }
             scheduleBuffer()
             
-            tryToInstallTap()
+            tryToInstallTap(onNode: audioFilePlayerNode)
             
             // Start Playing
-            try? audioEngine.start()
+            try? AudioManager.audioEngine.start()
             audioFilePlayerNode.play()
         }
     }
@@ -62,18 +62,17 @@ public class AudioManager {
     
     public func play(pureToneWithFrequency frequency: Int) {
         pureTonePlayerNode.frequency = Double(frequency)
-        tryToInstallTap()
-        try? audioEngine.start()
+        tryToInstallTap(onNode: pureTonePlayerNode)
+        try? AudioManager.audioEngine.start()
         pureTonePlayerNode.play()
     }
     
-    private func tryToInstallTap() {
+    private func tryToInstallTap(onNode node: AVAudioNode) {
         // Install tap
         // If true, a delegate is required to accept the FFT result
         if installTap {
             let bufferSize: UInt32 = 4000
-            let mixerNode = audioEngine.mainMixerNode
-            mixerNode.installTap(onBus: 0, bufferSize: bufferSize, format: mixerNode.outputFormat(forBus: 0)) { [weak self] (buffer, time) in
+            node.installTap(onBus: 0, bufferSize: bufferSize, format: node.outputFormat(forBus: 0)) { [weak self] (buffer, time) in
                 buffer.frameLength = bufferSize
                 self?.fftHelper.fourierTransform(buffer: buffer, audioManager: self!)
             }
