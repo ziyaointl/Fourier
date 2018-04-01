@@ -23,7 +23,6 @@
 		9816E9522063564300B757C5 /* CustomCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816E9512063564300B757C5 /* CustomCameraController.swift */; };
 		98187D3F206D8521006DC143 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98187D3E206D8521006DC143 /* Constants.swift */; };
 		9834EDEF2063CFB500087000 /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9834EDEE2063CFB500087000 /* ionicons.ttf */; };
-		9846D2A42067A9EF00C88975 /* Julie_Maxwells_Starry_Sky.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9846D2A32067A9EF00C88975 /* Julie_Maxwells_Starry_Sky.m4a */; };
 		989729EC206C680A007797F8 /* WaveformView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 989729EB206C680A007797F8 /* WaveformView.xib */; };
 		989729EE206C84B5007797F8 /* WaveformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989729ED206C84B5007797F8 /* WaveformView.swift */; };
 		989729F2206C95BE007797F8 /* WaveformViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989729F1206C95BE007797F8 /* WaveformViewController.swift */; };
@@ -35,11 +34,8 @@
 		98B6DA1A205A53E5009B54E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98B6DA18205A53E5009B54E7 /* Main.storyboard */; };
 		98B6DA1C205A53E5009B54E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98B6DA1B205A53E5009B54E7 /* Assets.xcassets */; };
 		98B6DA1F205A53E5009B54E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98B6DA1D205A53E5009B54E7 /* LaunchScreen.storyboard */; };
-		98B6DA2B205A54EB009B54E7 /* Fouler_lhorizon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 98B6DA2A205A54EB009B54E7 /* Fouler_lhorizon.mp3 */; };
 		98B6DA2D205A63F2009B54E7 /* SpectrumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B6DA2C205A63F2009B54E7 /* SpectrumView.swift */; };
 		98D5A9FF205A73B6003BDA7F /* 440and173.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 98D5A9FE205A73B6003BDA7F /* 440and173.m4a */; };
-		98D5AA01205AA30A003BDA7F /* MDK - Fingerbang.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 98D5AA00205AA30A003BDA7F /* MDK - Fingerbang.mp3 */; };
-		98D5AA03205ABD74003BDA7F /* Mirror.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 98D5AA02205ABD74003BDA7F /* Mirror.mp3 */; };
 		98D5AA05205B53C3003BDA7F /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D5AA04205B53C3003BDA7F /* AudioManager.swift */; };
 		98D5AA07205B5583003BDA7F /* AudioManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D5AA06205B5583003BDA7F /* AudioManagerDelegate.swift */; };
 		98DFA520206890E00072C7BA /* PlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DFA51F206890E00072C7BA /* PlotView.swift */; };
@@ -55,6 +51,7 @@
 		98114197206FC9D800946250 /* ToneComparisonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToneComparisonViewController.swift; sourceTree = "<group>"; };
 		981141992070519C00946250 /* equation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = equation.png; sourceTree = "<group>"; };
 		9811419B2070E2DB00946250 /* Piano A4.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Piano A4.m4a"; sourceTree = "<group>"; };
+		9811419D207110F500946250 /* Fourier.playgroundbook */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Fourier.playgroundbook; sourceTree = SOURCE_ROOT; };
 		9816E945205C2C1500B757C5 /* SceneKit Scene.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "SceneKit Scene.scn"; sourceTree = "<group>"; };
 		9816E947205D152500B757C5 /* SpectrumColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectrumColumn.swift; sourceTree = "<group>"; };
 		9816E949205D199C00B757C5 /* SpectrumGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectrumGraph.swift; sourceTree = "<group>"; };
@@ -64,7 +61,6 @@
 		9816E9512063564300B757C5 /* CustomCameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCameraController.swift; sourceTree = "<group>"; };
 		98187D3E206D8521006DC143 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9834EDEE2063CFB500087000 /* ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ionicons.ttf; sourceTree = "<group>"; };
-		9846D2A32067A9EF00C88975 /* Julie_Maxwells_Starry_Sky.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Julie_Maxwells_Starry_Sky.m4a; sourceTree = "<group>"; };
 		989729EB206C680A007797F8 /* WaveformView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WaveformView.xib; sourceTree = "<group>"; };
 		989729ED206C84B5007797F8 /* WaveformView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveformView.swift; sourceTree = "<group>"; };
 		989729F1206C95BE007797F8 /* WaveformViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveformViewController.swift; sourceTree = "<group>"; };
@@ -78,11 +74,8 @@
 		98B6DA1B205A53E5009B54E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98B6DA1E205A53E5009B54E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		98B6DA20205A53E5009B54E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		98B6DA2A205A54EB009B54E7 /* Fouler_lhorizon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Fouler_lhorizon.mp3; sourceTree = "<group>"; };
 		98B6DA2C205A63F2009B54E7 /* SpectrumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectrumView.swift; sourceTree = "<group>"; };
 		98D5A9FE205A73B6003BDA7F /* 440and173.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 440and173.m4a; sourceTree = "<group>"; };
-		98D5AA00205AA30A003BDA7F /* MDK - Fingerbang.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "MDK - Fingerbang.mp3"; sourceTree = "<group>"; };
-		98D5AA02205ABD74003BDA7F /* Mirror.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Mirror.mp3; sourceTree = "<group>"; };
 		98D5AA04205B53C3003BDA7F /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		98D5AA06205B5583003BDA7F /* AudioManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManagerDelegate.swift; sourceTree = "<group>"; };
 		98DFA51F206890E00072C7BA /* PlotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlotView.swift; sourceTree = "<group>"; };
@@ -148,17 +141,14 @@
 				98AF5859206D036C00E5C898 /* WaveformTableViewController.swift */,
 				98DFA521206894790072C7BA /* TestViewController.swift */,
 				98B6DA2C205A63F2009B54E7 /* SpectrumView.swift */,
-				98D5AA02205ABD74003BDA7F /* Mirror.mp3 */,
+				9811419D207110F500946250 /* Fourier.playgroundbook */,
 				98B6DA1B205A53E5009B54E7 /* Assets.xcassets */,
 				9811419B2070E2DB00946250 /* Piano A4.m4a */,
 				98B6DA1D205A53E5009B54E7 /* LaunchScreen.storyboard */,
-				9846D2A32067A9EF00C88975 /* Julie_Maxwells_Starry_Sky.m4a */,
 				98B6DA20205A53E5009B54E7 /* Info.plist */,
-				98B6DA2A205A54EB009B54E7 /* Fouler_lhorizon.mp3 */,
 				98D5A9FE205A73B6003BDA7F /* 440and173.m4a */,
 				9834EDEE2063CFB500087000 /* ionicons.ttf */,
 				981141992070519C00946250 /* equation.png */,
-				98D5AA00205AA30A003BDA7F /* MDK - Fingerbang.mp3 */,
 			);
 			path = Fourier;
 			sourceTree = "<group>";
@@ -227,15 +217,11 @@
 				98B6DA1F205A53E5009B54E7 /* LaunchScreen.storyboard in Resources */,
 				9811419A2070519C00946250 /* equation.png in Resources */,
 				98D5A9FF205A73B6003BDA7F /* 440and173.m4a in Resources */,
-				98D5AA01205AA30A003BDA7F /* MDK - Fingerbang.mp3 in Resources */,
 				98114196206F2F9B00946250 /* WaveFormAndFFTView.xib in Resources */,
 				98B6DA1C205A53E5009B54E7 /* Assets.xcassets in Resources */,
 				9811419C2070E2DC00946250 /* Piano A4.m4a in Resources */,
 				9834EDEF2063CFB500087000 /* ionicons.ttf in Resources */,
 				98B6DA1A205A53E5009B54E7 /* Main.storyboard in Resources */,
-				98D5AA03205ABD74003BDA7F /* Mirror.mp3 in Resources */,
-				9846D2A42067A9EF00C88975 /* Julie_Maxwells_Starry_Sky.m4a in Resources */,
-				98B6DA2B205A54EB009B54E7 /* Fouler_lhorizon.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

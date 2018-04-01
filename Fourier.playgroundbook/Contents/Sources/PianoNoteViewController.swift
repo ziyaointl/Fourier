@@ -2,8 +2,8 @@
 //  PianoNoteViewController.swift
 //  Fourier
 //
-//  Created by Blocry Glass on 3/31/18.
-//  Copyright © 2018 Blocry Glass. All rights reserved.
+//  Created by Ziyao Zhang on 3/31/18.
+//  Copyright © 2018 Ziyao Zhang. All rights reserved.
 //
 
 import UIKit
