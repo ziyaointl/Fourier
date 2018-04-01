@@ -101,7 +101,7 @@ public class WaveformViewController: UIViewController, WaveformViewDelegate {
         }
         func animate() {
             if self.isPlaying {
-                UIView.animate(withDuration: 0.1, delay: 0.0, options: .curveLinear, animations: animationBlock, completion: { _ in
+                UIView.animate(withDuration: 0.1, delay: 0.0, options: [.curveLinear, .allowUserInteraction], animations: animationBlock, completion: { _ in
                     animate()
                 })
             }
