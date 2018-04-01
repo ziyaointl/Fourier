@@ -1,7 +1,7 @@
 import UIKit
 import SceneKit
 
-public class FirstPageViewController: UIViewController, AudioManagerDelegate {
+public class WelcomPageViewController: UIViewController, AudioManagerDelegate {
     private var audioManager = AudioManager()
     private var scene: SCNScene!
     private var materials = Materials()
@@ -36,7 +36,7 @@ public class FirstPageViewController: UIViewController, AudioManagerDelegate {
         cameraNode.camera?.wantsExposureAdaptation = false
         cameraNode.camera?.exposureOffset = -0.8
         cameraNode.position = SCNVector3(x: 0, y: 0, z: 25)
-        cameraOrbitNode.position = SCNVector3(x: 0, y: 0, z: -8)
+        cameraOrbitNode.position = SCNVector3(x: 0, y: 5, z: -8)
         scene.rootNode.addChildNode(cameraOrbitNode)
         cameraOrbitNode.addChildNode(cameraNode)
         cameraController = CustomCameraController(for: cameraOrbitNode)

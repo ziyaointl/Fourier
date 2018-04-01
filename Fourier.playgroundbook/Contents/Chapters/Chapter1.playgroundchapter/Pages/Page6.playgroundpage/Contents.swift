@@ -3,7 +3,7 @@
  
  It has the same pitch as the first pure tone you saw, 'A4' or 440Hz.
  
- Notice how the sound wave is more irregular compared to the pure tone. This appearance indicates that it is a complex tone.
+ Notice how the sound wave is more irregular than the pure tone. This appearance indicates that it is a complex tone.
  
  **Pro Tip:** You can pause the audio in the middle of the note to observe the shape of the sound wave
  

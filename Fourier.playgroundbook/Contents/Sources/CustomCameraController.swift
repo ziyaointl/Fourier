@@ -13,8 +13,8 @@ public class CustomCameraController {
     var previousWidthRatio: Float = 0.0
     var previousHeightRatio: Float = 0.0
     var lookAtNode: SCNNode!
-    let maximumHeightRatio: Float = 0.4
-    let minimumHeightRatio: Float = 0.21
+    let maximumHeightRatio: Float = 0.41
+    let minimumHeightRatio: Float = 0.23
     var initialHeightRatio: Float {
         return (maximumHeightRatio + minimumHeightRatio) / 2
     }
@@ -22,8 +22,8 @@ public class CustomCameraController {
     public init(for node: SCNNode) {
         lookAtNode = node
         // Initialize position
-        lookAtNode.eulerAngles.x = -Float.pi * initialHeightRatio
-        previousHeightRatio = initialHeightRatio
+        lookAtNode.eulerAngles.x = -Float.pi * maximumHeightRatio
+        previousHeightRatio = maximumHeightRatio
     }
     
     @objc public func handlePanGesture(sender: UIPanGestureRecognizer) {

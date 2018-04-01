@@ -24,10 +24,10 @@ public extension UIView {
     }
     
     public func fillSelfWith(subView: UIView, inset: CGFloat) {
-        fillSefWith(subView: subView, insetLeft: inset, insetRight: inset, insetTop: inset, insetBottom: inset)
+        fillSelfWith(subView: subView, insetLeft: inset, insetRight: inset, insetTop: inset, insetBottom: inset)
     }
     
-    public func fillSefWith(subView: UIView, insetLeft: CGFloat, insetRight: CGFloat, insetTop: CGFloat, insetBottom: CGFloat) {
+    public func fillSelfWith(subView: UIView, insetLeft: CGFloat, insetRight: CGFloat, insetTop: CGFloat, insetBottom: CGFloat) {
         subView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(subView)
         

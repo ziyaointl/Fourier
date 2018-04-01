@@ -18,4 +18,19 @@ plotView.contentMode = .redraw
 plotView.currentFunction = FunctionGenerator.generateSineForPlotting(withFrequency: 440)
 mainView.addAndCenterSubview(subView: plotView, subViewHeight: Constants.Table.RowHeight, horizontalInset: 20)
 PlaygroundPage.current.liveView = mainView
+
+//Animate plotView
+let animationBlock: () -> Void = {
+    plotView.offset += 5 * .pi
+}
+func animate() {
+    UIView.animate(withDuration: 0.1, delay: 0.0, options: .curveLinear, animations: animationBlock, completion: { _ in
+        animate()
+    })
+    
+}
+DispatchQueue.main.async {
+    animate()
+}
 //#-end-hidden-code
+
