@@ -1,5 +1,5 @@
 /*:
- Sound waves vibrations traveling through air, like ripples traveling through water. When an object vibrates, it compresses and decompresses the air around it, creating a sound.
+ Sound waves are vibrations traveling through air like ripples traveling through water. When an object vibrates, it compresses and decompresses the air around it, creating a sound.
  
  On the execution result screen, you can see a simple sound wave.
  

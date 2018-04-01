@@ -1,9 +1,11 @@
 /*:
- Here are a few sound waves with different frequencies. Click on the play button to hear what they each sounds like.
+ Here are a few sound waves with different frequencies. Click on the play button to hear how they sound.
  
  Notice how the pitch of those waves are different. In general, the higher the frequency, the higher the pitch.
  
  Now it's your turn! Create or modify sound waves using createWave(withFrequency:)
+ 
+ Please click on **Run My Code** after each edit
  
 (It is helpful to note that the hearing range for humans is approximately from 20Hz to 20,000Hz)
  */
