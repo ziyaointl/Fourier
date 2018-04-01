@@ -25,7 +25,7 @@ public class ToneComparisonViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         scrollView = UIScrollView()
-        self.view.fillSelfWith(subView: scrollView, inset: 30)
+        self.view.fillSelfWith(subView: scrollView, insetLeft: 30, insetRight: 30, insetTop: 80, insetBottom: 80)
         self.view.backgroundColor = Constants.Colors.LightGray
         
         stackView = UIStackView()

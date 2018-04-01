@@ -35,7 +35,7 @@ public class WaveformTableViewController: UIViewController, UITableViewDelegate,
         tableView.allowsSelection = false
         tableView.backgroundColor = Constants.Colors.LightGray
         self.view.backgroundColor = Constants.Colors.LightGray
-        view.fillSelfWith(subView: tableView, inset: 20)
+        self.view.fillSelfWith(subView: tableView, insetLeft: 30, insetRight: 30, insetTop: 80, insetBottom: 80)
     }
     
     public func addWaveForm(withFrequency frequency: Int) {
