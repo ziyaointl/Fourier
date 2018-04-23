@@ -5,8 +5,10 @@
 	<key>Version</key>
 	<string>1.0</string>
 	<key>Name</key>
-	<string>Second Example Page</string>
+	<string>Soundwaves</string>
 	<key>LiveViewMode</key>
-	<string>HiddenByDefault</string>
+	<string>VisibleByDefault</string>
+	<key>LiveViewEdgeToEdge</key>
+	<true/>
 </dict>
 </plist>

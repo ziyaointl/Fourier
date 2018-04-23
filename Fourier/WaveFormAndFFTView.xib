@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WaveFormAndFFTView" customModule="Fourier" customModuleProvider="target">
+            <connections>
+                <outlet property="plotView" destination="szU-6l-bhR" id="yST-6z-3jK"/>
+                <outlet property="view" destination="iN0-l3-epB" id="xYq-9R-fuX"/>
+                <outlet property="waveFormView" destination="aio-cW-zlw" id="oa6-Pn-ndQ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="575" height="311"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fourier Transform Result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ow-J3-YyL">
+                    <rect key="frame" x="0.0" y="154" width="575" height="35"/>
+                    <color key="backgroundColor" white="0.95999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="29"/>
+                    <color key="textColor" white="0.35999999999999999" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aio-cW-zlw">
+                    <rect key="frame" x="0.0" y="0.0" width="575" height="126"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="126" id="d9S-aL-pZg"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="szU-6l-bhR" customClass="PlotView" customModule="Fourier" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="189" width="575" height="122"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.95999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="aio-cW-zlw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="GBi-Ej-igN"/>
+                <constraint firstItem="aio-cW-zlw" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="HBy-nF-98E"/>
+                <constraint firstItem="aio-cW-zlw" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="HQo-SA-QqC"/>
+                <constraint firstItem="9ow-J3-YyL" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="IHx-Fm-Ymh"/>
+                <constraint firstItem="szU-6l-bhR" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="M83-NX-HnG"/>
+                <constraint firstItem="9ow-J3-YyL" firstAttribute="top" secondItem="aio-cW-zlw" secondAttribute="bottom" constant="28" id="R6u-e8-NHS"/>
+                <constraint firstItem="szU-6l-bhR" firstAttribute="top" secondItem="9ow-J3-YyL" secondAttribute="bottom" id="T4f-N4-1me"/>
+                <constraint firstItem="9ow-J3-YyL" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="WGC-yz-d4E"/>
+                <constraint firstItem="szU-6l-bhR" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="asF-IZ-CCZ"/>
+                <constraint firstItem="szU-6l-bhR" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="g6P-DZ-DTf"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="46.5" y="-144.5"/>
+        </view>
+    </objects>
+</document>

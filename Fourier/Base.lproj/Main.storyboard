@@ -98,5 +98,106 @@
             </objects>
             <point key="canvasLocation" x="24.609375" y="50"/>
         </scene>
+        <!--Test View Controller-->
+        <scene sceneID="WGU-Oz-tX0">
+            <objects>
+                <viewController id="MeE-GW-SpZ" customClass="TestViewController" customModule="Fourier" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3lT-jX-P8s">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iz6-0a-8tA" customClass="PlotView" customModule="Fourier" customModuleProvider="target">
+                                <rect key="frame" x="200" y="220" width="624" height="348"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0xy-bk-Ida">
+                                <rect key="frame" x="489" y="648" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="animatePlot:" destination="MeE-GW-SpZ" eventType="touchUpInside" id="lKe-D4-Oql"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="c6P-o3-hC8" firstAttribute="bottom" secondItem="Iz6-0a-8tA" secondAttribute="bottom" constant="200" id="8Bo-S5-BjI"/>
+                            <constraint firstItem="Iz6-0a-8tA" firstAttribute="leading" secondItem="c6P-o3-hC8" secondAttribute="leading" constant="200" id="8Ox-4G-0mc"/>
+                            <constraint firstItem="Iz6-0a-8tA" firstAttribute="top" secondItem="c6P-o3-hC8" secondAttribute="top" constant="200" id="Avx-Ec-bnX"/>
+                            <constraint firstItem="c6P-o3-hC8" firstAttribute="bottom" secondItem="0xy-bk-Ida" secondAttribute="bottom" constant="90" id="Eod-0O-eM8"/>
+                            <constraint firstItem="c6P-o3-hC8" firstAttribute="trailing" secondItem="Iz6-0a-8tA" secondAttribute="trailing" constant="200" id="IgD-6p-9Dp"/>
+                            <constraint firstItem="0xy-bk-Ida" firstAttribute="top" secondItem="Iz6-0a-8tA" secondAttribute="bottom" constant="80" id="T6M-bT-w6q"/>
+                            <constraint firstItem="0xy-bk-Ida" firstAttribute="centerX" secondItem="c6P-o3-hC8" secondAttribute="centerX" id="xMZ-6T-28q"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="c6P-o3-hC8"/>
+                    </view>
+                    <connections>
+                        <outlet property="plotView" destination="Iz6-0a-8tA" id="Amx-a3-ddW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fTj-Fr-FK0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="760.546875" y="50"/>
+        </scene>
+        <!--Test View Controller-->
+        <scene sceneID="mi8-UL-XKM">
+            <objects>
+                <viewController id="Eau-S8-5dL" customClass="TestViewController" customModule="Fourier" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rDH-PH-0SP">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="KFa-Sq-YBz"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Be0-4x-k7z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="775.78125" y="1002.34375"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="U7z-Fr-y24">
+            <objects>
+                <viewController id="581-zO-OAw" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IjF-kC-55d">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="daU-wH-yBO">
+                                <rect key="frame" x="140" y="331" width="744" height="126"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="126" id="cAo-jg-zUk"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="vRr-9B-TB7" kind="embed" id="sgu-eE-kEv"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gvn-SU-w1D" firstAttribute="trailing" secondItem="daU-wH-yBO" secondAttribute="trailing" constant="140" id="2qL-V5-13u"/>
+                            <constraint firstItem="daU-wH-yBO" firstAttribute="centerY" secondItem="gvn-SU-w1D" secondAttribute="centerY" id="dmJ-mX-lrG"/>
+                            <constraint firstItem="daU-wH-yBO" firstAttribute="leading" secondItem="gvn-SU-w1D" secondAttribute="leading" constant="140" id="eFZ-pl-dRt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gvn-SU-w1D"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UZr-yj-vCC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="24.609375" y="1003.90625"/>
+        </scene>
+        <!--Waveform View Controller-->
+        <scene sceneID="Lfv-Ta-bqo">
+            <objects>
+                <viewController id="vRr-9B-TB7" customClass="WaveformViewController" customModule="Fourier" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nsa-pz-LfV">
+                        <rect key="frame" x="0.0" y="0.0" width="744" height="126"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="AsO-25-mKj"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uri-7l-iDJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="25" y="1558"/>
+        </scene>
     </scenes>
 </document>

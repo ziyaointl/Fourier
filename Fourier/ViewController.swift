@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  Fourier
 //
-//  Created by Blocry Glass on 3/15/18.
-//  Copyright © 2018 Blocry Glass. All rights reserved.
+//  Created by Ziyao Zhang on 3/15/18.
+//  Copyright © 2018 Ziyao Zhang. All rights reserved.
 //
 
 import UIKit
@@ -24,18 +24,6 @@ class ViewController: UIViewController, AudioManagerDelegate {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var continueButton: UIButton!
-    
-    private func setup(subView: UIView) {
-        subView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(subView)
-        
-        NSLayoutConstraint.activate([
-            subView.topAnchor.constraint(equalTo: view.topAnchor),
-            subView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            subView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            subView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-            ])
-    }
     
     private func setup(scene: SCNScene) {
         // Set up enviornment lighting
@@ -104,6 +92,7 @@ class ViewController: UIViewController, AudioManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         audioManager.delegate = self
+        audioManager.installTap = true
         scene = SCNScene()
         setup(scene: scene)
         sceneView.scene = scene
@@ -125,8 +114,8 @@ class ViewController: UIViewController, AudioManagerDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if let url = Bundle.main.url(forResource: "Julie_Maxwells_Starry_Sky", withExtension: "m4a") {
-            audioManager.play(fileWithURL: url)
+        if let url = Bundle.main.url(forResource: "Mike_Durek_A_Cool_Rainy_Night", withExtension: "mp3") {
+            audioManager.play(fileWithURL: url, completionHandler: nil)
         }
     }
     
