@@ -14,7 +14,6 @@
 		98114198206FC9D800946250 /* ToneComparisonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98114197206FC9D800946250 /* ToneComparisonViewController.swift */; };
 		9811419A2070519C00946250 /* equation.png in Resources */ = {isa = PBXBuildFile; fileRef = 981141992070519C00946250 /* equation.png */; };
 		9811419C2070E2DC00946250 /* Piano A4.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9811419B2070E2DB00946250 /* Piano A4.m4a */; };
-		9816E946205C2C1500B757C5 /* SceneKit Scene.scn in Resources */ = {isa = PBXBuildFile; fileRef = 9816E945205C2C1500B757C5 /* SceneKit Scene.scn */; };
 		9816E948205D152500B757C5 /* SpectrumColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816E947205D152500B757C5 /* SpectrumColumn.swift */; };
 		9816E94A205D199C00B757C5 /* SpectrumGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816E949205D199C00B757C5 /* SpectrumGraph.swift */; };
 		9816E94C205D200200B757C5 /* SpectrumGraph3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816E94B205D200200B757C5 /* SpectrumGraph3D.swift */; };
@@ -52,7 +51,6 @@
 		981141992070519C00946250 /* equation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = equation.png; sourceTree = "<group>"; };
 		9811419B2070E2DB00946250 /* Piano A4.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Piano A4.m4a"; sourceTree = "<group>"; };
 		9811419D207110F500946250 /* Fourier.playgroundbook */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Fourier.playgroundbook; sourceTree = SOURCE_ROOT; };
-		9816E945205C2C1500B757C5 /* SceneKit Scene.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "SceneKit Scene.scn"; sourceTree = "<group>"; };
 		9816E947205D152500B757C5 /* SpectrumColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectrumColumn.swift; sourceTree = "<group>"; };
 		9816E949205D199C00B757C5 /* SpectrumGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectrumGraph.swift; sourceTree = "<group>"; };
 		9816E94B205D200200B757C5 /* SpectrumGraph3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectrumGraph3D.swift; sourceTree = "<group>"; };
@@ -130,7 +128,6 @@
 				9816E94D205D240500B757C5 /* Materials.swift */,
 				98D5AA04205B53C3003BDA7F /* AudioManager.swift */,
 				98DFA5232069E81A0072C7BA /* AVPureTonePlayerNode.swift */,
-				9816E945205C2C1500B757C5 /* SceneKit Scene.scn */,
 				98D5AA06205B5583003BDA7F /* AudioManagerDelegate.swift */,
 				9816E94F2060812200B757C5 /* FFTHelper.swift */,
 				98B6DA18205A53E5009B54E7 /* Main.storyboard */,
@@ -213,7 +210,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				989729EC206C680A007797F8 /* WaveformView.xib in Resources */,
-				9816E946205C2C1500B757C5 /* SceneKit Scene.scn in Resources */,
 				98B6DA1F205A53E5009B54E7 /* LaunchScreen.storyboard in Resources */,
 				9811419A2070519C00946250 /* equation.png in Resources */,
 				98D5A9FF205A73B6003BDA7F /* 440and173.m4a in Resources */,
@@ -396,7 +392,7 @@
 				DEVELOPMENT_TEAM = 6S29AYKP6Y;
 				INFOPLIST_FILE = Fourier/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = blocry.Fourier;
+				PRODUCT_BUNDLE_IDENTIFIER = blo.Fourier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -411,7 +407,7 @@
 				DEVELOPMENT_TEAM = 6S29AYKP6Y;
 				INFOPLIST_FILE = Fourier/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = blocry.Fourier;
+				PRODUCT_BUNDLE_IDENTIFIER = blo.Fourier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
